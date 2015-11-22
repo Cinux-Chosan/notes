@@ -1,0 +1,1681 @@
+<!DOCTYPE html>
+<!-- saved from url=(0042)http://segmentfault.com/a/1190000000365519 -->
+<html lang="zh-CN"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><script charset="utf-8" async="" src="./Day 19_ EmberJS 入门指南 - 新闻 - SegmentFault_files/fixed7o.js"></script><script charset="utf-8" async="" src="./Day 19_ EmberJS 入门指南 - 新闻 - SegmentFault_files/ecom"></script><script charset="utf-8" async="" src="./Day 19_ EmberJS 入门指南 - 新闻 - SegmentFault_files/ecom(1)"></script><script charset="utf-8" async="" src="./Day 19_ EmberJS 入门指南 - 新闻 - SegmentFault_files/ecom(2)"></script><script charset="utf-8" async="" src="./Day 19_ EmberJS 入门指南 - 新闻 - SegmentFault_files/ecom(3)"></script><script charset="utf-8" async="" src="./Day 19_ EmberJS 入门指南 - 新闻 - SegmentFault_files/ecom(4)"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+    <meta name="renderer" content="webkit">
+    <meta property="qc:admins" content="15317273575564615446375">
+            <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui, maximum-scale=1, user-scalable=no">
+        <meta name="alexaVerifyID" content="LkzCRJ7rPEUwt6fVey2vhxiw1vQ">
+    <meta name="apple-itunes-app" content="app-id=958101793, app-argument=">
+    <title>Day 19: EmberJS 入门指南 - 新闻 - SegmentFault</title>
+
+
+            <meta name="description" content="编者注：我们发现了有趣的系列文章《30天学习30种新技术》，正在翻译，一天一篇更新，年终礼包。下面是第19天的内容。 到目前为止，我们这一系列文章涉及了Bower、AngularJS、GruntJS、PhoneGap和MeteorJS 这些Ja...">
+    
+            <meta name="keywords" content="ember.js javascript 前端 html5">
+    
+    <link rel="search" type="application/opensearchdescription+xml" href="http://segmentfault.com/opensearch.xml" title="SegmentFault">
+    <link rel="shortcut icon" href="http://static.segmentfault.com/v-564dd704/global/img/favicon.ico">
+    <link rel="apple-touch-icon" href="http://static.segmentfault.com/v-564dd704/global/img/touch-icon.png">
+
+    <meta name="msapplication-TileColor" content="#009a61">
+    <meta name="msapplication-square150x150logo" content="http://static.segmentfault.com/v-564dd704/global/img/touch-icon.png">
+
+    <meta name="userId" value="1030000004021342" id="SFUserId">
+    <meta name="userRank" value="0" id="SFUserRank">
+
+    <link rel="alternate" type="application/atom+xml" title="SegmentFault 最新问题" href="http://segmentfault.com/feeds/questions">
+    <link rel="alternate" type="application/atom+xml" title="SegmentFault 最新文章" href="http://segmentfault.com/feeds/blogs">
+    
+    
+    
+            <link rel="stylesheet" href="./Day 19_ EmberJS 入门指南 - 新闻 - SegmentFault_files/global.css">
+                <link rel="stylesheet" href="./Day 19_ EmberJS 入门指南 - 新闻 - SegmentFault_files/blog_all.css">
+                <link rel="stylesheet" href="./Day 19_ EmberJS 入门指南 - 新闻 - SegmentFault_files/responsive.css">
+    
+    
+    <!--[if lt IE 9]>
+    <link rel="stylesheet" href="http://static.segmentfault.com/v-564dd704/global/css/ie.css"/>
+    <script src="http://static.segmentfault.com/v-564dd704/global/js/html5shiv.js"></script>
+    <script src="http://static.segmentfault.com/v-564dd704/global/js/respond.js"></script>
+    <![endif]-->
+
+
+<script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="//segmentfault.com:7000/socket.io/socket.io.js" src="./Day 19_ EmberJS 入门指南 - 新闻 - SegmentFault_files/socket.io.js"></script></head>
+
+<body class="blog-post have-notify"><div id="BAIDU_DUP_fp_wrapper" style="position: absolute; left: -1px; bottom: -1px; z-index: 0; width: 0px; height: 0px; overflow: hidden; visibility: hidden; display: none;"><iframe id="BAIDU_DUP_fp_iframe" src="./Day 19_ EmberJS 入门指南 - 新闻 - SegmentFault_files/o.html" style="width: 0px; height: 0px; visibility: hidden; display: none;"></iframe></div>
+<!--[if lt IE 9]>
+<div class="alert alert-danger topframe" role="alert">你的浏览器实在<strong>太太太太太太旧了</strong>，放学别走，升级完浏览器再说 <a target="_blank"
+                                                                                                        class="alert-link"
+                                                                                                        href="http://browsehappy.com">立即升级</a>
+</div>
+<![endif]-->
+
+    <div class="alert alert-warning topframe" role="alert">你的邮箱 Chosan@segmentfault.com 尚未验证，部分功能将无法使用 <a href="javascript:void(0);" class="send-mail btn btn-default btn-xs ml5" onclick="$(&#39;#activate&#39;).modal(&#39;show&#39;);">遇到问题?</a>
+        <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+    </div>
+    
+    <div class="global-nav" xmlns="http://www.w3.org/1999/html">
+        <nav class="container nav">
+            <div class="dropdown m-menu">
+                <a href="javascript:void(0);" id="dLabel" class="visible-xs-block m-toptools" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <span class="glyphicon glyphicon-align-justify"></span>
+                    <span class="mobile-menu__unreadpoint"></span>
+                </a>
+                <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+                    <li class="mobile-menu__item"><a href="http://segmentfault.com/questions/newest">问答</a></li>
+                    <li class="mobile-menu__item"><a href="http://segmentfault.com/blogs">文章</a></li>
+                    <li class="mobile-menu__item"><a href="http://segmentfault.com/notes">笔记</a></li>
+                    <li class="mobile-menu__item"><a href="http://segmentfault.com/jobs">职位</a></li>
+                    <li class="mobile-menu__item"><a href="http://segmentfault.com/events">活动</a></li>
+
+                    <li class="mobile-menu__item"><a href="http://segmentfault.com/tags">标签</a></li>
+                    <li class="mobile-menu__item"><a href="http://segmentfault.com/users">榜单</a></li>
+                    <li class="mobile-menu__item"><a href="http://segmentfault.com/sites">子站</a></li>
+                                            <li role="presentation" class="divider"></li>
+                        <li class="mobile-menu__item"><a href="http://segmentfault.com/user/notifications">消息<span class="pull-right badge mt4" id="m-messageCount"></span></a>
+                        </li>
+                        <li role="presentation" class="divider"></li>
+                        <li class="mobile-menu__item"><a href="http://segmentfault.com/api/user?do=logout&amp;_=1db9f49d1083d88da09fc0e8a17b874e">退出</a></li>
+                                    </ul>
+            </div>
+
+            <h1 class="logo"><a class="sf" href="http://segmentfault.com/">SegmentFault</a></h1>
+
+                                                <a href="http://segmentfault.com/write" class="visible-xs-block pull-right m-ask m-toptools"><span class="glyphicon glyphicon-pencil"></span></a>
+                            
+            <form action="http://segmentfault.com/search" class="header-search pull-left hidden-sm hidden-xs">
+                <button class="btn btn-link">
+                    <span class="sr-only">搜索</span>
+                    <span class="glyphicon glyphicon-search"></span>
+                </button>
+                <input id="searchBox" name="q" type="text" placeholder="输入关键字搜索" class="form-control" value="">
+            </form>
+
+            <ul class="menu list-inline pull-left hidden-xs">
+                <li class="menu__item"><a href="http://segmentfault.com/questions">问答</a></li>
+                <li class="menu__item"><a href="http://segmentfault.com/blogs">文章</a></li>
+                <li class="menu__item"><a href="http://segmentfault.com/notes">笔记</a></li>
+                <li class="menu__item"><a href="http://segmentfault.com/jobs">职位</a></li>
+
+
+                <li class="menu__item dropdown hoverDropdown">
+                    <a data-toggle="dropdown" href="http://segmentfault.com/sites" class="more dropdownBtn">
+                        ···<span class="sr-only">更多</span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="http://segmentfault.com/events">活动</a></li>
+                        <li><a href="http://segmentfault.com/users">榜单</a></li>
+                        <li><a href="http://segmentfault.com/tags">标签</a></li>
+                        <li><a href="http://segmentfault.com/sites">子站</a></li>
+                        <li><a href="http://segmentfault.com/app">移动 App</a></li>
+                    </ul>
+                </li>
+            </ul>
+
+            <ul class="opts pull-right list-inline hidden-xs">
+                                    <li class="opts__item dropdown hoverDropdown write-btns">
+                        <a class="dropdownBtn" data-toggle="dropdown" href="http://segmentfault.com/ask">撰写<span class="caret"></span></a>
+                        <ul class="dropdown-menu dropdown-menu-right ">
+                                                                                        <li>
+                                    <a href="http://segmentfault.com/ask">提问题</a>
+                                </li>
+                                                            <li>
+                                    <a href="http://segmentfault.com/write">写文章</a>
+                                </li>
+                                                            <li>
+                                    <a href="http://segmentfault.com/record">记笔记</a>
+                                </li>
+                            
+                        </ul>
+                    </li>
+                    <li class="opts__item message has-unread">
+                        <a href="http://segmentfault.com/user/notifications">
+                            <span class="sr-only">消息</span>
+                            <span id="messageCount" class="glyphicon glyphicon-envelope"></span><span class="has-unread__count">1</span>
+                        </a>
+                    </li>
+                    <li class="opts__item user dropdown hoverDropdown">
+                        <a class="dropdownBtn user-avatar" data-toggle="dropdown" style="background-image: url(&#39;http://static.segmentfault.com/v-564dd704/global/img/user-64.png&#39;)" href="http://segmentfault.com/u/forward_sunny">
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-right">
+                            <li><a href="http://segmentfault.com/u/forward_sunny">我的主页</a></li>
+                            <li><a href="http://segmentfault.com/user/profile">我的档案</a></li>
+                            
+                            <li><a href="http://segmentfault.com/user/note">我的笔记</a></li>
+                            <li><a href="http://segmentfault.com/user/draft">草稿箱</a></li>
+                            <li><a href="http://segmentfault.com/user/bookmarks">收藏夹</a></li>
+                            <li><a href="http://segmentfault.com/user/settings">帐号设置</a></li>
+                            <li class="divider"></li>
+                            <li><a href="http://segmentfault.com/api/user/logout?_=1db9f49d1083d88da09fc0e8a17b874e">退出</a></li>
+                            <li><a class="js__action--complain" href="javascript:void(0);">我要申诉</a></li>
+                            <li><a href="http://segmentfault.com/faq">帮助中心</a></li>
+                            <li><a href="http://segmentfault.com/0x">建议反馈</a></li>
+                            <script src="./Day 19_ EmberJS 入门指南 - 新闻 - SegmentFault_files/hm.js"></script><script async="" src="./Day 19_ EmberJS 入门指南 - 新闻 - SegmentFault_files/analytics.js"></script><script type="text/template" id="js__action--complain-tpl">
+                                <form class="complain__form" method="post" action="/api/appeals/add">
+                                    <div class="form-group">
+                                        <label>理由</label>
+                                        <textarea name="description" class="form-control" rows="3"></textarea>
+                                    </div>
+                                </form>
+                            </script>
+                        </ul>
+                    </li>
+                            </ul>
+        </nav>
+    </div>
+
+    <div class="wrap">
+    <div class="post-topheader custom-news">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                    <ol class="breadcrumb">
+                        <li><a href="http://segmentfault.com/blogs">文章</a></li>
+                        <li><a href="http://segmentfault.com/blog/news">新闻</a></li>
+                        <li class="active">文章详情</li>
+                    </ol>
+                    <h1 class="h3 title" id="articleTitle" data-id="1190000000365519"><a href="http://segmentfault.com/a/1190000000365519"> Day 19: EmberJS 入门指南</a></h1>
+
+                    <div class="author" data-username="weakish" data-userslug="weakish" data-useravatar="http://sfault-avatar.b0.upaiyun.com/266/538/2665388308-1030000000323597_huge128">
+                        <a href="http://segmentfault.com/u/weakish" class="mr5"><img class="avatar-24 mr10" src="./Day 19_ EmberJS 入门指南 - 新闻 - SegmentFault_files/2665388308-1030000000323597_huge128" alt="weakish"><strong>weakish</strong></a>
+                        <strong class="text-black mr10">16k</strong>
+                        2013年12月20日 发布
+                                                                    </div>
+                </div>
+                <div class="col-md-3">
+                    <ul class="widget-action--ver list-unstyled">
+                        <li>
+                                                                                                <button type="button" class="btn btn-success btn-sm" data-id="1190000000365519" id="sideLike">推荐</button>
+                                                                                        <strong id="sideLiked">0</strong> 推荐
+                        </li>
+                        <li>
+                                                                                                <button type="button" id="sideBookmark" class="btn btn-default btn-sm active" data-id="1190000000365519" data-type="article">已收藏</button>
+                                                                                        <strong id="sideBookmarked">14</strong> 收藏，<strong class="no-stress">10.3k</strong> 浏览
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div><!-- end .post-topheader -->
+
+    <div class="container mt30">
+        <div class="row">
+            <div class="col-xs-12 col-md-9 main">
+
+                                                <div class="article fmt">
+                    <p><strong>编者注：我们发现了有趣的系列文章<a rel="nofollow" href="http://segmentfault.com/a/1190000000349384">《30天学习30种新技术》</a>，正在翻译，一天一篇更新，年终礼包。下面是第19天的内容。</strong></p>
+
+<hr>
+
+<p>到目前为止，我们这一系列文章涉及了<a rel="nofollow" href="http://segmentfault.com/a/1190000000349555" target="_blank">Bower</a>、<a rel="nofollow" href="http://segmentfault.com/a/1190000000350125">AngularJS</a>、<a rel="nofollow" href="http://segmentfault.com/a/1190000000353114" target="_blank">GruntJS</a>、<a rel="nofollow" href="http://segmentfault.com/a/1190000000357272">PhoneGap</a>和<a rel="nofollow" href="http://segmentfault.com/a/1190000000361440" target="_blank">MeteorJS</a> 这些JavaScript技术。今天我打算学习一个名为<a rel="nofollow" href="http://emberjs.com/" target="_blank">Ember</a>的框架。本文将介绍如何用Ember创建一个单页面的社交化书签应用。本教程将包括两篇：第1篇介绍客户端代码和用<a rel="nofollow" href="http://diveintohtml5.info/storage.html" target="_blank">HTML 5本地存储</a>持久保存数据，第2篇中我们将使用一个部署在OpenShift上的REST后端。过几天我会写第2篇。</p>
+
+<p><img data-src="http://segmentfault.com/img/bVbHe0" src="./Day 19_ EmberJS 入门指南 - 新闻 - SegmentFault_files/bVbHe0" style="cursor: pointer; display: inline;"></p>
+
+<h2 id="articleHeader0">应用</h2>
+
+<p>我们将开发一个社交化书签应用，允许用户提交和分享链接。你可以在<a rel="nofollow" href="http://shekhargulati.github.io/day19/" target="_blank">这里</a>查看这个应用。这个应用可以做到：</p>
+
+<ul>
+<li><p>当用户访问<code>/</code>时，他会看到以提交时间排序的报道列表。</p>
+
+<p><img data-src="http://segmentfault.com/img/bVbHe4" src="./Day 19_ EmberJS 入门指南 - 新闻 - SegmentFault_files/bVbHe4" style="cursor: pointer; display: inline;"></p></li>
+<li><p>当用户访问某个书签时，例如<code>#/stories/d6p88</code>，用户会看到关于这个报道的信息，例如是谁提交的，何时提交的，以及文章的摘要。</p>
+
+<p><img data-src="http://segmentfault.com/img/bVbHe6" src="./Day 19_ EmberJS 入门指南 - 新闻 - SegmentFault_files/bVbHe6" style="cursor: pointer; display: inline;"></p></li>
+<li><p>最后，当用户通过<code>#/story/new</code>提交新报道时，内容会存储在用户浏览器的本地存储上。</p>
+
+<p><img data-src="http://segmentfault.com/img/bVbHe7" src="./Day 19_ EmberJS 入门指南 - 新闻 - SegmentFault_files/bVbHe7" style="cursor: pointer; display: inline;"></p></li>
+</ul>
+
+<h2 id="articleHeader1">什么是Ember？</h2>
+
+<p>Ember是一个客户端的JavaScript MV* 框架，用来构建野心勃勃的web应用。它依赖于<a rel="nofollow" href="http://jquery.com/" target="_blank">jQuery</a>和<a rel="nofollow" href="http://handlebarsjs.com/" target="_blank">Handlebars</a>库。如果你曾经在Backbone下工作，那么你会发现Ember是一个武断的Backbone，或者Backbone++。Ember可以为你完成很多事情，如果你遵循它的命名约定的话。Ember.js在这方面很突出。因此，如果我们在应用中加入了url路由和报道，那么我们就有了这些：</p>
+
+<ul>
+<li>报道的模板</li>
+<li>StoriesRoute</li>
+<li>StoriesController</li>
+</ul>
+
+<p>请参考<a rel="nofollow" href="http://emberjs.com/guides/concepts/naming-conventions/" target="_blank">命名约定文档</a>来理解Ember的命名约定。</p>
+
+<h2 id="articleHeader2">Ember核心概念</h2>
+
+<p>本节将介绍我们的示例应用中将涉及的四个EmberJS的核心概念：</p>
+
+<ol>
+<li><p>模型：模型代表我们展示给用户的应用领域内的对象。在上述例子中，一个报道就代表一个模型。报道，加上它的属性，包括标题、url等，构成一个模型。模型可以通过jQuery加载服务器端的JSON数据的方式来获取和更新，也可以通过<a rel="nofollow" href="https://github.com/emberjs/data" target="_blank">Ember Data</a>来获取和更新。Ember Data是一个客户端的ORM实现，可以利用它方便地对底层的持久性存储进行CRUD操作。Ember Data提供一个仓库接口，可以借助提供的一些适配器配置。Ember Data提供的两个核心适配器是RESTAdapter和FixtureAdapter。在本文中，我们将使用LocalStorage适配器，该适配器将数据持久化为 HTML 5 的LocalStorage。请参阅<a rel="nofollow" href="http://emberjs.com/guides/models/" target="_blank">此文档</a>了解详情。</p></li>
+<li><p>路由器和路由：路由器指定应用的所有路由。路由器将URL映射到路由。例如，当一个用户访问<code>/#/story/new</code>的时候，将渲染<code>newstory</code>模板。该模板展现了一个HTML表单。用户可通过创建<code>Ember.Route</code>子类来定制路由。在上述例子中，用户访问<code>/#/story/new</code>将渲染一个基于<code>newstory</code>模板的默认模型。<code>NewStoryRoute</code>会负责将默认的模型分配给<code>newstory</code>模板。请参阅<a rel="nofollow" href="http://emberjs.com/guides/controllers/" target="_blank">文档</a>了解详情。</p></li>
+<li><p>控制器：控制器可以做两件事——首先它装饰路由返回的模型，接着它监听用户执行的行动。例如，当用户提交报道的时候，NewStoryController负责通过Ember Data API将报道的数据持续化到存储层。请参阅<a rel="nofollow" href="http://emberjs.com/guides/controllers/" target="_blank">文档</a>了解详情。</p></li>
+<li><p>模版：模板向用户展示应用的界面。每个应用都有一个默认的应用模板。</p></li>
+</ol>
+
+<h2 id="articleHeader3">Ember的Chrome插件</h2>
+
+<p>EmberJS提供了一个Chrome插件，因此调试ember应用很容易。这个插件可以在 <a rel="nofollow" href="https://chrome.google.com/webstore/detail/ember-inspector/bmdblncegkenkacieihfhpjfppoconhi?hl=en" target="_blank">chrome web store</a> 下载安装。可以查看<a rel="nofollow" href="http://www.youtube.com/user/wycats/search?query=inspector" target="_blank">Ember团队做的视频</a>了解chrome插件的详情。</p>
+
+<h2 id="articleHeader4">Github仓库</h2>
+
+<p>今天的示例程序的代码可从<a rel="nofollow" href="https://github.com/shekhargulati/day19-emberjs-demo" target="_blank">github</a>取得。</p>
+
+<h2 id="articleHeader5">第一步 下载新手套装</h2>
+
+<p>ember提供了一套新手装备，因此开始使用框架非常简单。新手套装包括了需要用到的javascript文件（<code>ember-*.js</code>、<code>jquery-*.js</code>和<code>handlerbars-*.js</code>）以及示例应用。下载新手套装，解压缩，最后重命名为<code>getbookmarks</code>。</p>
+
+<div class="widget-codetool" style="display:none;"><button class="selectCode btn btn-xs">全选</button><button href="javascript:void(0);" class="copyCode btn btn-xs" data-clipboard-text="wget https://github.com/emberjs/starter-kit/archive/v1.1.2.zip
+unzip v1.1.2.zip 
+mv starter-kit-1.1.2/ getbookmarks
+" data-toggle="tooltip" data-placement="top" title="">复制</button><button href="javascript:void(0);" class="saveToNote btn btn-xs">放进笔记</button></div><pre class="hljs nginx"><code class="lang-sh"><span class="hljs-title">wget</span> <span class="hljs-url">https://github.com/emberjs/starter-kit/archive/v1.1.2.zip</span>
+unzip v1.<span class="hljs-number">1</span>.<span class="hljs-number">2</span>.zip 
+mv starter-kit-<span class="hljs-number">1</span>.<span class="hljs-number">1</span>.<span class="hljs-number">2</span>/ getbookmarks
+</code></pre>
+
+<p>在浏览器中打开<code>index.html</code>，你会看到如下页面：</p>
+
+<p><img data-src="http://segmentfault.com/img/bVbHe9" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC" style="cursor: pointer;"></p>
+
+<h2 id="articleHeader6">第二步 启用GruntJS监视</h2>
+
+<p>这一步是可选的，不过如果你做了这步，那么你的生活质量将大大提高。如果你决定跳过这步，那么每次你做了改动之后都需要刷新浏览器。在<a rel="nofollow" href="http://segmentfault.com/a/1190000000354555">第7天的文章</a>，我讨论了GruntJS的在线重载功能。我没有在EmberJS里找到任何自动重载的功能，因此我决定使用GruntJS的livereload来提高效率。你需要Node、NPM和Grunt-CLI。请参考我<a rel="nofollow" href="http://segmentfault.com/a/1190000000353114" target="_blank">第5天</a>和<a rel="nofollow" href="http://segmentfault.com/a/1190000000354555">第7天</a>的文章了解详情。</p>
+
+<p>在<code>getbookmarks</code>文件夹内创建<code>package.json</code>，内容如下：</p>
+
+<div class="widget-codetool" style="display:none;"><button class="selectCode btn btn-xs">全选</button><button href="javascript:void(0);" class="copyCode btn btn-xs" data-clipboard-text="{
+  &quot;name&quot;: &quot;getbookmarks&quot;,
+  &quot;version&quot;: &quot;0.0.1&quot;,
+  &quot;description&quot;: &quot;GetBookMarks application&quot;,
+  &quot;devDependencies&quot;: {
+    &quot;grunt&quot;: &quot;~0.4.1&quot;,
+    &quot;grunt-contrib-watch&quot;: &quot;~0.5.3&quot;
+  }
+}
+" data-toggle="tooltip" data-placement="top" title="">复制</button><button href="javascript:void(0);" class="saveToNote btn btn-xs">放进笔记</button></div><pre class="hljs json"><code class="lang-js">{
+  "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">"getbookmarks"</span></span>,
+  "<span class="hljs-attribute">version</span>": <span class="hljs-value"><span class="hljs-string">"0.0.1"</span></span>,
+  "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"GetBookMarks application"</span></span>,
+  "<span class="hljs-attribute">devDependencies</span>": <span class="hljs-value">{
+    "<span class="hljs-attribute">grunt</span>": <span class="hljs-value"><span class="hljs-string">"~0.4.1"</span></span>,
+    "<span class="hljs-attribute">grunt-contrib-watch</span>": <span class="hljs-value"><span class="hljs-string">"~0.5.3"</span>
+  </span>}
+</span>}
+</code></pre>
+
+<p>创建<code>Gruntfile.js</code>，内容如下：</p>
+
+<div class="widget-codetool" style="display:none;"><button class="selectCode btn btn-xs">全选</button><button href="javascript:void(0);" class="copyCode btn btn-xs" data-clipboard-text="module.exports = function(grunt) {
+
+
+  grunt.initConfig({
+
+    watch :{
+      scripts :{
+        files : [&#39;js/app.js&#39;,&#39;css/*.css&#39;,&#39;index.html&#39;],
+        options : {
+          livereload : 9090,
+        }
+      }
+    }
+
+  });
+
+  grunt.loadNpmTasks(&#39;grunt-contrib-watch&#39;);
+
+  grunt.registerTask(&#39;default&#39;, []);  
+};
+" data-toggle="tooltip" data-placement="top" title="">复制</button><button href="javascript:void(0);" class="saveToNote btn btn-xs">放进笔记</button></div><pre class="hljs javascript"><code class="lang-js"><span class="hljs-built_in">module</span>.exports = <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(grunt)</span> </span>{
+
+
+  grunt.initConfig({
+
+    watch :{
+      scripts :{
+        files : [<span class="hljs-string">'js/app.js'</span>,<span class="hljs-string">'css/*.css'</span>,<span class="hljs-string">'index.html'</span>],
+        options : {
+          livereload : <span class="hljs-number">9090</span>,
+        }
+      }
+    }
+
+  });
+
+  grunt.loadNpmTasks(<span class="hljs-string">'grunt-contrib-watch'</span>);
+
+  grunt.registerTask(<span class="hljs-string">'default'</span>, []);  
+};
+</code></pre>
+
+<p>使用npm安装依赖：</p>
+
+<div class="widget-codetool" style="display:none;"><button class="selectCode btn btn-xs">全选</button><button href="javascript:void(0);" class="copyCode btn btn-xs" data-clipboard-text="npm install grunt --save-dev
+npm install grunt-contrib-watch --save-dev
+" data-toggle="tooltip" data-placement="top" title="">复制</button><button href="javascript:void(0);" class="saveToNote btn btn-xs">放进笔记</button></div><pre class="hljs sql"><code>npm <span class="hljs-operator"><span class="hljs-keyword">install</span> grunt <span class="hljs-comment">--save-dev</span>
+npm <span class="hljs-keyword">install</span> grunt-contrib-watch <span class="hljs-comment">--save-dev</span>
+</span></code></pre>
+
+<p>在<code>index.html</code>的头部加入：</p>
+
+<div class="widget-codetool" style="display:none;"><button class="selectCode btn btn-xs">全选</button><button href="javascript:void(0);" class="copyCode btn btn-xs" data-clipboard-text="&lt;script src=&quot;http://localhost:9090/livereload.js&quot;&gt;&lt;/script&gt;
+" data-toggle="tooltip" data-placement="top" title="">复制</button><button href="javascript:void(0);" class="saveToNote btn btn-xs">放进笔记</button></div><pre class="hljs xml"><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-title">script</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"http://localhost:9090/livereload.js"</span>&gt;</span><span class="javascript"></span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
+</code></pre>
+
+<p>调用<code>grunt watch</code>命令，同时在你的默认浏览器中打开<code>index.html</code>。</p>
+
+<div class="widget-codetool" style="display:none;"><button class="selectCode btn btn-xs">全选</button><button href="javascript:void(0);" class="copyCode btn btn-xs" data-clipboard-text="; grunt watch
+Running &quot;watch&quot; task
+Waiting...OK
+" data-toggle="tooltip" data-placement="top" title="">复制</button><button href="javascript:void(0);" class="saveToNote btn btn-xs">放进笔记</button></div><pre class="hljs coffeescript"><code class="lang-sh">; grunt watch
+Running <span class="hljs-string">"watch"</span> task
+Waiting...OK
+</code></pre>
+
+<p>修改<code>index.html</code>，无需刷新就能看到改变：</p>
+
+<p><img data-src="http://segmentfault.com/img/bVbHfc" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC" style="cursor: pointer;"></p>
+
+<h2 id="articleHeader7">第三步 理解新手模板应用</h2>
+
+<p>在新手模板中，除了css之外，有两个和应用相关的文件——<code>index.html</code>和<code>app.js</code>。为了理解模板应用的作用，我们需要理解<code>app.js</code>。</p>
+
+<div class="widget-codetool" style="display:none;"><button class="selectCode btn btn-xs">全选</button><button href="javascript:void(0);" class="copyCode btn btn-xs" data-clipboard-text="App = Ember.Application.create();
+
+App.Router.map(function() {
+  // put your routes here
+});
+
+App.IndexRoute = Ember.Route.extend({
+  model: function() {
+    return [&#39;red&#39;, &#39;yellow&#39;, &#39;blue&#39;];
+  }
+});
+" data-toggle="tooltip" data-placement="top" title="">复制</button><button href="javascript:void(0);" class="saveToNote btn btn-xs">放进笔记</button></div><pre class="hljs javascript"><code class="lang-js">App = Ember.Application.create();
+
+App.Router.map(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
+  <span class="hljs-comment">// put your routes here</span>
+});
+
+App.IndexRoute = Ember.Route.extend({
+  model: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
+    <span class="hljs-keyword">return</span> [<span class="hljs-string">'red'</span>, <span class="hljs-string">'yellow'</span>, <span class="hljs-string">'blue'</span>];
+  }
+});
+</code></pre>
+
+<p>解释下以上的代码：</p>
+
+<ol>
+<li><p>第一行创建了一个Ember应用的实例。</p></li>
+<li><p>使用<code>App.Route.map</code>定义应用的路由。每个Ember应用都有一个默认路由<code>Index</code>，绑定到<code>/</code>。所以，当调用<code>/</code>路由的时候，<code>index</code>模板将被渲染。<code>index</code>模板由<code>index.html</code>定义。感觉到了很多“约定大于配置”了吧？</p></li>
+<li><p>在Ember中，每个模板都有一个model作为支持。路由负责制定哪个mobdel支持哪个模板。在上述<code>app.js</code>中，<code>IndexRoute</code>返回一个字符串数组，作为index模板的model。index模板迭代这个数组然后渲染一个列表。</p></li>
+</ol>
+
+<h2 id="articleHeader8">第四步 移除新手模板代码</h2>
+
+<p>移除<code>js/app.js</code>中的代码，然后用以下内容替换：</p>
+
+<div class="widget-codetool" style="display:none;"><button class="selectCode btn btn-xs">全选</button><button href="javascript:void(0);" class="copyCode btn btn-xs" data-clipboard-text="App = Ember.Application.create();
+
+App.Router.map(function() {
+  // put your routes here
+});
+" data-toggle="tooltip" data-placement="top" title="">复制</button><button href="javascript:void(0);" class="saveToNote btn btn-xs">放进笔记</button></div><pre class="hljs javascript"><code class="lang-js">App = Ember.Application.create();
+
+App.Router.map(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
+  <span class="hljs-comment">// put your routes here</span>
+});
+</code></pre>
+
+<p>相应地，将<code>index.html</code>的内容替换为：</p>
+
+<div class="widget-codetool" style="display:none;"><button class="selectCode btn btn-xs">全选</button><button href="javascript:void(0);" class="copyCode btn btn-xs" data-clipboard-text="&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;meta charset=&quot;utf-8&quot;&gt;
+&lt;title&gt;GetBookMarks -- Share your favorite links online&lt;/title&gt;
+  &lt;link rel=&quot;stylesheet&quot; href=&quot;css/normalize.css&quot;&gt;
+  &lt;link rel=&quot;stylesheet&quot; href=&quot;css/style.css&quot;&gt;
+  &lt;script src=&quot;http://localhost:9090/livereload.js&quot;&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+  &lt;script type=&quot;text/x-handlebars&quot;&gt;
+    {{outlet}}
+  &lt;/script&gt;
+
+  &lt;script type=&quot;text/x-handlebars&quot; data-template-name=&quot;index&quot;&gt;
+
+  &lt;/script&gt;
+  &lt;script src=&quot;js/libs/jquery-1.9.1.js&quot;&gt;&lt;/script&gt;
+  &lt;script src=&quot;js/libs/handlebars-1.0.0.js&quot;&gt;&lt;/script&gt;
+  &lt;script src=&quot;js/libs/ember-1.1.2.js&quot;&gt;&lt;/script&gt;
+  &lt;script src=&quot;js/app.js&quot;&gt;&lt;/script&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+" data-toggle="tooltip" data-placement="top" title="">复制</button><button href="javascript:void(0);" class="saveToNote btn btn-xs">放进笔记</button></div><pre class="hljs xml"><code class="lang-html"><span class="hljs-doctype">&lt;!DOCTYPE html&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">html</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">head</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">meta</span> <span class="hljs-attribute">charset</span>=<span class="hljs-value">"utf-8"</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">title</span>&gt;</span>GetBookMarks -- Share your favorite links online<span class="hljs-tag">&lt;/<span class="hljs-title">title</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">link</span> <span class="hljs-attribute">rel</span>=<span class="hljs-value">"stylesheet"</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"css/normalize.css"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">link</span> <span class="hljs-attribute">rel</span>=<span class="hljs-value">"stylesheet"</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"css/style.css"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">script</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"http://localhost:9090/livereload.js"</span>&gt;</span><span class="javascript"></span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">head</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">body</span>&gt;</span>
+
+  <span class="hljs-tag">&lt;<span class="hljs-title">script</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"text/x-handlebars"</span>&gt;</span><span class="javascript">
+    {{outlet}}
+  </span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
+
+  <span class="hljs-tag">&lt;<span class="hljs-title">script</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"text/x-handlebars"</span> <span class="hljs-attribute">data-template-name</span>=<span class="hljs-value">"index"</span>&gt;</span><span class="javascript">
+
+  </span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">script</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"js/libs/jquery-1.9.1.js"</span>&gt;</span><span class="javascript"></span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">script</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"js/libs/handlebars-1.0.0.js"</span>&gt;</span><span class="javascript"></span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">script</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"js/libs/ember-1.1.2.js"</span>&gt;</span><span class="javascript"></span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">script</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"js/app.js"</span>&gt;</span><span class="javascript"></span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
+
+<span class="hljs-tag">&lt;/<span class="hljs-title">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">html</span>&gt;</span>
+</code></pre>
+
+<h2 id="articleHeader9">第五步 添加Twitter Bootstrap</h2>
+
+<p>我们将使用twitter bootstrap来给应用添加样式。从<a rel="nofollow" href="http://getbootstrap.com/" target="_blank">官网</a>下载twitter bootstrap包，然后复制<code>bootstrap.css</code>到css文件夹，同时复制字体文件夹。</p>
+
+<p>接着在<code>index.html</code>中加入<code>bootstrap.css</code>，在页首使用一个固定位置的导航条。</p>
+
+<div class="widget-codetool" style="display:none;"><button class="selectCode btn btn-xs">全选</button><button href="javascript:void(0);" class="copyCode btn btn-xs" data-clipboard-text="&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;meta charset=&quot;utf-8&quot;&gt;
+&lt;title&gt;GetBookMarks -- Share your favorite links online&lt;/title&gt;
+  &lt;link rel=&quot;stylesheet&quot; href=&quot;css/normalize.css&quot;&gt;
+  &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;css/bootstrap.css&quot;&gt;
+  &lt;link rel=&quot;stylesheet&quot; href=&quot;css/style.css&quot;&gt;
+  &lt;script src=&quot;http://localhost:9090/livereload.js&quot;&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+  &lt;script type=&quot;text/x-handlebars&quot;&gt;
+    &lt;nav class=&quot;navbar navbar-default navbar-fixed-top&quot; role=&quot;navigation&quot;&gt;
+      &lt;div class=&quot;container&quot;&gt;
+        &lt;div class=&quot;navbar-header&quot;&gt;
+          &lt;a class=&quot;navbar-brand&quot; href=&quot;#&quot;&gt;GetBookMarks&lt;/a&gt;
+        &lt;/div&gt;
+
+
+      &lt;/div&gt;
+    &lt;/nav&gt;
+    &lt;div id=&quot;main&quot; class=&quot;container&quot;&gt;
+      {{outlet}}
+    &lt;/div&gt;
+  &lt;/script&gt;
+
+  &lt;script type=&quot;text/x-handlebars&quot; data-template-name=&quot;index&quot;&gt;
+
+  &lt;/script&gt;
+
+  &lt;script src=&quot;js/libs/jquery-1.9.1.js&quot;&gt;&lt;/script&gt;
+  &lt;script src=&quot;js/libs/handlebars-1.0.0.js&quot;&gt;&lt;/script&gt;
+  &lt;script src=&quot;js/libs/ember-1.1.2.js&quot;&gt;&lt;/script&gt;
+  &lt;script src=&quot;js/app.js&quot;&gt;&lt;/script&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+" data-toggle="tooltip" data-placement="top" title="">复制</button><button href="javascript:void(0);" class="saveToNote btn btn-xs">放进笔记</button></div><pre class="hljs xml"><code class="lang-html"><span class="hljs-doctype">&lt;!DOCTYPE html&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">html</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">head</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">meta</span> <span class="hljs-attribute">charset</span>=<span class="hljs-value">"utf-8"</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">title</span>&gt;</span>GetBookMarks -- Share your favorite links online<span class="hljs-tag">&lt;/<span class="hljs-title">title</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">link</span> <span class="hljs-attribute">rel</span>=<span class="hljs-value">"stylesheet"</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"css/normalize.css"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">link</span> <span class="hljs-attribute">rel</span>=<span class="hljs-value">"stylesheet"</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"text/css"</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"css/bootstrap.css"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">link</span> <span class="hljs-attribute">rel</span>=<span class="hljs-value">"stylesheet"</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"css/style.css"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">script</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"http://localhost:9090/livereload.js"</span>&gt;</span><span class="javascript"></span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">head</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">body</span>&gt;</span>
+
+  <span class="hljs-tag">&lt;<span class="hljs-title">script</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"text/x-handlebars"</span>&gt;</span><span class="javascript">
+    &lt;nav <span class="hljs-keyword">class</span>=<span class="hljs-string">"navbar navbar-default navbar-fixed-top"</span> role=<span class="hljs-string">"navigation"</span>&gt;
+      <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"container"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"navbar-header"</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"navbar-brand"</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span>&gt;</span>GetBookMarks<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+
+
+      <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">nav</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"main"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"container"</span>&gt;</span>
+      {{outlet}}
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  </span></span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
+
+  <span class="hljs-tag">&lt;<span class="hljs-title">script</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"text/x-handlebars"</span> <span class="hljs-attribute">data-template-name</span>=<span class="hljs-value">"index"</span>&gt;</span><span class="javascript">
+
+  </span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
+
+  <span class="hljs-tag">&lt;<span class="hljs-title">script</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"js/libs/jquery-1.9.1.js"</span>&gt;</span><span class="javascript"></span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">script</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"js/libs/handlebars-1.0.0.js"</span>&gt;</span><span class="javascript"></span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">script</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"js/libs/ember-1.1.2.js"</span>&gt;</span><span class="javascript"></span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">script</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"js/app.js"</span>&gt;</span><span class="javascript"></span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
+
+<span class="hljs-tag">&lt;/<span class="hljs-title">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">html</span>&gt;</span>
+</code></pre>
+
+<p>上述html中，<code>&lt;script type="text/x-handlebars"&gt;</code>代表我们的应用模板。应用模板使用<code>{{outlet}}</code>标签为其他模板预留位置，其内容取决于url。</p>
+
+<p>在<code>css/style.css</code>中加入下面的代码。这会在正文上方添加一个40px的空白。这样才能正确地渲染固定位置的导航条。</p>
+
+<div class="widget-codetool" style="display:none;"><button class="selectCode btn btn-xs">全选</button><button href="javascript:void(0);" class="copyCode btn btn-xs" data-clipboard-text="body{
+    padding-top: 40px;
+}
+" data-toggle="tooltip" data-placement="top" title="">复制</button><button href="javascript:void(0);" class="saveToNote btn btn-xs">放进笔记</button></div><pre class="hljs css"><code class="lang-css"><span class="hljs-tag">body</span><span class="hljs-rules">{
+    <span class="hljs-rule"><span class="hljs-attribute">padding-top</span>:<span class="hljs-value"> <span class="hljs-number">40px</span></span></span>;
+<span class="hljs-rule">}</span></span>
+</code></pre>
+
+<h2 id="articleHeader10">第五步 提交新报道</h2>
+
+<p>我们将开始实现提交新报道的功能。Ember建议你围绕着URL思考。当用户访问<code>#/story/new</code>的时候，会展示一个表单。</p>
+
+<p>在<code>App.Router.Map</code>中增加一个绑定<code>#/story/new</code>的新路由：</p>
+
+<div class="widget-codetool" style="display:none;"><button class="selectCode btn btn-xs">全选</button><button href="javascript:void(0);" class="copyCode btn btn-xs" data-clipboard-text="App.Router.map(function() {
+  this.resource(&#39;newstory&#39; , {path : &#39;story/new&#39;});
+});
+" data-toggle="tooltip" data-placement="top" title="">复制</button><button href="javascript:void(0);" class="saveToNote btn btn-xs">放进笔记</button></div><pre class="hljs javascript"><code class="lang-js">App.Router.map(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
+  <span class="hljs-keyword">this</span>.resource(<span class="hljs-string">'newstory'</span> , {path : <span class="hljs-string">'story/new'</span>});
+});
+</code></pre>
+
+<p>接着我们在<code>index.html</code>中添加一个渲染表单的<code>newstory</code>模板：</p>
+
+<div class="widget-codetool" style="display:none;"><button class="selectCode btn btn-xs">全选</button><button href="javascript:void(0);" class="copyCode btn btn-xs" data-clipboard-text="&lt;script type=&quot;text/x-handlebars&quot; id=&quot;newstory&quot;&gt;
+    &lt;form class=&quot;form-horizontal&quot; role=&quot;form&quot;&gt;
+      &lt;div class=&quot;form-group&quot;&gt;
+        &lt;label for=&quot;title&quot; class=&quot;col-sm-2 control-label&quot;&gt;Title&lt;/label&gt;
+        &lt;div class=&quot;col-sm-10&quot;&gt;
+          &lt;input type=&quot;title&quot; class=&quot;form-control&quot; id=&quot;title&quot; name=&quot;title&quot; placeholder=&quot;Title of the link&quot; required&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;form-group&quot;&gt;
+        &lt;label for=&quot;excerpt&quot; class=&quot;col-sm-2 control-label&quot;&gt;Excerpt&lt;/label&gt;
+        &lt;div class=&quot;col-sm-10&quot;&gt;
+          &lt;textarea class=&quot;form-control&quot; id=&quot;excerpt&quot; name=&quot;excerpt&quot; placeholder=&quot;Short description of the link&quot; required&gt;&lt;/textarea&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+
+      &lt;div class=&quot;form-group&quot;&gt;
+        &lt;label for=&quot;url&quot; class=&quot;col-sm-2 control-label&quot;&gt;Url&lt;/label&gt;
+        &lt;div class=&quot;col-sm-10&quot;&gt;
+          &lt;input type=&quot;url&quot; class=&quot;form-control&quot; id=&quot;url&quot; name=&quot;url&quot; placeholder=&quot;Url of the link&quot; required&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;form-group&quot;&gt;
+        &lt;label for=&quot;tags&quot; class=&quot;col-sm-2 control-label&quot;&gt;Tags&lt;/label&gt;
+        &lt;div class=&quot;col-sm-10&quot;&gt;
+          &lt;textarea id=&quot;tags&quot; class=&quot;form-control&quot; name=&quot;tags&quot; placeholder=&quot;Comma seperated list of tags&quot; rows=&quot;3&quot; required&gt;&lt;/textarea&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;form-group&quot;&gt;
+        &lt;label for=&quot;fullname&quot; class=&quot;col-sm-2 control-label&quot;&gt;Full Name&lt;/label&gt;
+        &lt;div class=&quot;col-sm-10&quot;&gt;
+          &lt;input type=&quot;text&quot; class=&quot;form-control&quot; id=&quot;fullname&quot; name=&quot;fullname&quot; placeholder=&quot;Enter your Full Name like Shekhar Gulati&quot; required&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;form-group&quot;&gt;
+        &lt;div class=&quot;col-sm-offset-2 col-sm-10&quot;&gt;
+          &lt;button type=&quot;submit&quot; class=&quot;btn btn-success&quot; {{action &#39;save&#39;}}&gt;Submit Story&lt;/button&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+  &lt;/form&gt;
+  &lt;/script&gt;
+" data-toggle="tooltip" data-placement="top" title="">复制</button><button href="javascript:void(0);" class="saveToNote btn btn-xs">放进笔记</button></div><pre class="hljs cs"><code class="lang-html">&lt;script type=<span class="hljs-string">"text/x-handlebars"</span> id=<span class="hljs-string">"newstory"</span>&gt;
+    &lt;form <span class="hljs-keyword">class</span>=<span class="hljs-string">"form-horizontal"</span> role=<span class="hljs-string">"form"</span>&gt;
+      &lt;div <span class="hljs-keyword">class</span>=<span class="hljs-string">"form-group"</span>&gt;
+        &lt;label <span class="hljs-keyword">for</span>=<span class="hljs-string">"title"</span> <span class="hljs-keyword">class</span>=<span class="hljs-string">"col-sm-2 control-label"</span>&gt;Title&lt;/label&gt;
+        &lt;div <span class="hljs-keyword">class</span>=<span class="hljs-string">"col-sm-10"</span>&gt;
+          &lt;input type=<span class="hljs-string">"title"</span> <span class="hljs-keyword">class</span>=<span class="hljs-string">"form-control"</span> id=<span class="hljs-string">"title"</span> name=<span class="hljs-string">"title"</span> placeholder=<span class="hljs-string">"Title of the link"</span> required&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div <span class="hljs-keyword">class</span>=<span class="hljs-string">"form-group"</span>&gt;
+        &lt;label <span class="hljs-keyword">for</span>=<span class="hljs-string">"excerpt"</span> <span class="hljs-keyword">class</span>=<span class="hljs-string">"col-sm-2 control-label"</span>&gt;Excerpt&lt;/label&gt;
+        &lt;div <span class="hljs-keyword">class</span>=<span class="hljs-string">"col-sm-10"</span>&gt;
+          &lt;textarea <span class="hljs-keyword">class</span>=<span class="hljs-string">"form-control"</span> id=<span class="hljs-string">"excerpt"</span> name=<span class="hljs-string">"excerpt"</span> placeholder=<span class="hljs-string">"Short description of the link"</span> required&gt;&lt;/textarea&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+
+      &lt;div <span class="hljs-keyword">class</span>=<span class="hljs-string">"form-group"</span>&gt;
+        &lt;label <span class="hljs-keyword">for</span>=<span class="hljs-string">"url"</span> <span class="hljs-keyword">class</span>=<span class="hljs-string">"col-sm-2 control-label"</span>&gt;Url&lt;/label&gt;
+        &lt;div <span class="hljs-keyword">class</span>=<span class="hljs-string">"col-sm-10"</span>&gt;
+          &lt;input type=<span class="hljs-string">"url"</span> <span class="hljs-keyword">class</span>=<span class="hljs-string">"form-control"</span> id=<span class="hljs-string">"url"</span> name=<span class="hljs-string">"url"</span> placeholder=<span class="hljs-string">"Url of the link"</span> required&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div <span class="hljs-keyword">class</span>=<span class="hljs-string">"form-group"</span>&gt;
+        &lt;label <span class="hljs-keyword">for</span>=<span class="hljs-string">"tags"</span> <span class="hljs-keyword">class</span>=<span class="hljs-string">"col-sm-2 control-label"</span>&gt;Tags&lt;/label&gt;
+        &lt;div <span class="hljs-keyword">class</span>=<span class="hljs-string">"col-sm-10"</span>&gt;
+          &lt;textarea id=<span class="hljs-string">"tags"</span> <span class="hljs-keyword">class</span>=<span class="hljs-string">"form-control"</span> name=<span class="hljs-string">"tags"</span> placeholder=<span class="hljs-string">"Comma seperated list of tags"</span> rows=<span class="hljs-string">"3"</span> required&gt;&lt;/textarea&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div <span class="hljs-keyword">class</span>=<span class="hljs-string">"form-group"</span>&gt;
+        &lt;label <span class="hljs-keyword">for</span>=<span class="hljs-string">"fullname"</span> <span class="hljs-keyword">class</span>=<span class="hljs-string">"col-sm-2 control-label"</span>&gt;Full Name&lt;/label&gt;
+        &lt;div <span class="hljs-keyword">class</span>=<span class="hljs-string">"col-sm-10"</span>&gt;
+          &lt;input type=<span class="hljs-string">"text"</span> <span class="hljs-keyword">class</span>=<span class="hljs-string">"form-control"</span> id=<span class="hljs-string">"fullname"</span> name=<span class="hljs-string">"fullname"</span> placeholder=<span class="hljs-string">"Enter your Full Name like Shekhar Gulati"</span> required&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div <span class="hljs-keyword">class</span>=<span class="hljs-string">"form-group"</span>&gt;
+        &lt;div <span class="hljs-keyword">class</span>=<span class="hljs-string">"col-sm-offset-2 col-sm-10"</span>&gt;
+          &lt;button type=<span class="hljs-string">"submit"</span> <span class="hljs-keyword">class</span>=<span class="hljs-string">"btn btn-success"</span> {{action <span class="hljs-string">'save'</span>}}&gt;Submit Story&lt;/button&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+  &lt;/form&gt;
+  &lt;/script&gt;
+</code></pre>
+
+<p>访问<code>#/story/new</code>即可查看表单：</p>
+
+<p><img data-src="http://segmentfault.com/img/bVbHfm" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC" style="cursor: pointer;"></p>
+
+<p>接着我们在导航条中添加一个链接，这样访问报道提交表单就很容易。替换一下<code>nav</code>元素：</p>
+
+<div class="widget-codetool" style="display:none;"><button class="selectCode btn btn-xs">全选</button><button href="javascript:void(0);" class="copyCode btn btn-xs" data-clipboard-text="&lt;nav class=&quot;navbar navbar-default navbar-fixed-top navbar-inverse&quot; role=&quot;navigation&quot;&gt;
+      &lt;div class=&quot;container&quot;&gt;
+        &lt;div class=&quot;navbar-header&quot;&gt;
+          &lt;a class=&quot;navbar-brand&quot; href=&quot;#&quot;&gt;GetBookMarks&lt;/a&gt;
+
+        &lt;/div&gt;
+        &lt;ul class=&quot;nav navbar-nav pull-right&quot;&gt;
+            &lt;li&gt;{{#link-to &#39;newstory&#39;}}&lt;span class=&quot;glyphicon glyphicon-plus&quot;&gt;&lt;/span&gt; Submit Story{{/link-to}}&lt;/li&gt;
+        &lt;/ul&gt;
+
+      &lt;/div&gt;
+    &lt;/nav&gt;
+" data-toggle="tooltip" data-placement="top" title="">复制</button><button href="javascript:void(0);" class="saveToNote btn btn-xs">放进笔记</button></div><pre class="hljs xml"><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-title">nav</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"navbar navbar-default navbar-fixed-top navbar-inverse"</span> <span class="hljs-attribute">role</span>=<span class="hljs-value">"navigation"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"container"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"navbar-header"</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"navbar-brand"</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span>&gt;</span>GetBookMarks<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+
+        <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">ul</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"nav navbar-nav pull-right"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>{{#link-to 'newstory'}}<span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"glyphicon glyphicon-plus"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span> Submit Story{{/link-to}}<span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span>
+
+      <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">nav</span>&gt;</span>
+</code></pre>
+
+<p>注意上面我们用<code>{{#link-to}}</code>创建了一个指向路由的链接。请参阅<a rel="nofollow" href="http://emberjs.com/guides/templates/links/" target="_blank">文档</a>了解详情。</p>
+
+<p>表单已经有了，接下来要添加HTML 5本地存储的功能。为了添加本地存储支持，我们需要首先下载<a rel="nofollow" href="http://builds.emberjs.com/tags/v1.0.0-beta.3/ember-data.js" target="_blank">Ember Data</a>和<a rel="nofollow" href="https://raw.github.com/rpflorence/ember-localstorage-adapter/master/localstorage_adapter.js" target="_blank">Local Storage Adapter</a> JavaScript文件。将这些文件放在<code>js/libs</code>下。接着，在<code>index.html</code>中添加这些<code>script</code>标签。</p>
+
+<div class="widget-codetool" style="display:none;"><button class="selectCode btn btn-xs">全选</button><button href="javascript:void(0);" class="copyCode btn btn-xs" data-clipboard-text="&lt;script src=&quot;js/libs/jquery-1.9.1.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;js/libs/handlebars-1.0.0.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;js/libs/ember-1.1.2.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;js/libs/ember-data.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;js/libs/localstorage_adapter.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;js/app.js&quot;&gt;&lt;/script&gt;
+" data-toggle="tooltip" data-placement="top" title="">复制</button><button href="javascript:void(0);" class="saveToNote btn btn-xs">放进笔记</button></div><pre class="hljs xml"><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-title">script</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"js/libs/jquery-1.9.1.js"</span>&gt;</span><span class="javascript"></span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">script</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"js/libs/handlebars-1.0.0.js"</span>&gt;</span><span class="javascript"></span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">script</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"js/libs/ember-1.1.2.js"</span>&gt;</span><span class="javascript"></span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">script</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"js/libs/ember-data.js"</span>&gt;</span><span class="javascript"></span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">script</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"js/libs/localstorage_adapter.js"</span>&gt;</span><span class="javascript"></span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">script</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"js/app.js"</span>&gt;</span><span class="javascript"></span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
+</code></pre>
+
+<p>如前所述，Ember Data是一个客户端的ORM实现，它使在底层存储进行CRUD操作很容易。这里我们将使用LSAdapter。在<code>app.js</code>中加入：</p>
+
+<div class="widget-codetool" style="display:none;"><button class="selectCode btn btn-xs">全选</button><button href="javascript:void(0);" class="copyCode btn btn-xs" data-clipboard-text="App.ApplicationAdapter = DS.LSAdapter.extend({
+  namespace: &#39;stories&#39;
+});
+" data-toggle="tooltip" data-placement="top" title="">复制</button><button href="javascript:void(0);" class="saveToNote btn btn-xs">放进笔记</button></div><pre class="hljs coffeescript"><code class="lang-js">App.ApplicationAdapter = DS.LSAdapter.extend({
+  <span class="hljs-attribute">namespace</span>: <span class="hljs-string">'stories'</span>
+});
+</code></pre>
+
+<p>接着是定义model。一篇报道需要有url、title（标题）、fullname（提交报道的用户的全名）、excerpt（摘要），以及SubmittedOn（日期）信息。在下面的模型中，我们使用了字符串和日期类型。适配器默认支持的属性类型为字符串、数字、布尔值和日期。</p>
+
+<div class="widget-codetool" style="display:none;"><button class="selectCode btn btn-xs">全选</button><button href="javascript:void(0);" class="copyCode btn btn-xs" data-clipboard-text="App.Story = DS.Model.extend({
+    url : DS.attr(&#39;string&#39;),
+    tags : DS.attr(&#39;string&#39;),
+    fullname : DS.attr(&#39;string&#39;),
+    title : DS.attr(&#39;string&#39;),
+    excerpt : DS.attr(&#39;string&#39;),
+    submittedOn : DS.attr(&#39;date&#39;)
+
+});
+" data-toggle="tooltip" data-placement="top" title="">复制</button><button href="javascript:void(0);" class="saveToNote btn btn-xs">放进笔记</button></div><pre class="hljs coffeescript"><code class="lang-js">App.Story = DS.Model.extend({
+    url : DS.attr(<span class="hljs-string">'string'</span>),
+    tags : DS.attr(<span class="hljs-string">'string'</span>),
+    fullname : DS.attr(<span class="hljs-string">'string'</span>),
+    title : DS.attr(<span class="hljs-string">'string'</span>),
+    excerpt : DS.attr(<span class="hljs-string">'string'</span>),
+    submittedOn : DS.attr(<span class="hljs-string">'date'</span>)
+
+});
+</code></pre>
+
+<p>接着我们编写<code>NewstoryController</code>来持久化内容：</p>
+
+<div class="widget-codetool" style="display:none;"><button class="selectCode btn btn-xs">全选</button><button href="javascript:void(0);" class="copyCode btn btn-xs" data-clipboard-text="App.NewstoryController = Ember.ObjectController.extend({
+
+ actions :{
+    save : function(){
+        var url = $(&#39;#url&#39;).val();
+        var tags = $(&#39;#tags&#39;).val();
+        var fullname = $(&#39;#fullname&#39;).val();
+        var title = $(&#39;#title&#39;).val();
+        var excerpt = $(&#39;#excerpt&#39;).val();
+        var submittedOn = new Date();
+        var store = this.get(&#39;store&#39;);
+        var story = store.createRecord(&#39;story&#39;,{
+            url : url,
+            tags : tags,
+            fullname : fullname,
+            title : title,
+            excerpt : excerpt,
+            submittedOn : submittedOn
+        });
+        story.save();
+        this.transitionToRoute(&#39;index&#39;);
+    }
+ }
+});
+" data-toggle="tooltip" data-placement="top" title="">复制</button><button href="javascript:void(0);" class="saveToNote btn btn-xs">放进笔记</button></div><pre class="hljs javascript"><code class="lang-js">App.NewstoryController = Ember.ObjectController.extend({
+
+ actions :{
+    save : <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span></span>{
+        <span class="hljs-keyword">var</span> url = $(<span class="hljs-string">'#url'</span>).val();
+        <span class="hljs-keyword">var</span> tags = $(<span class="hljs-string">'#tags'</span>).val();
+        <span class="hljs-keyword">var</span> fullname = $(<span class="hljs-string">'#fullname'</span>).val();
+        <span class="hljs-keyword">var</span> title = $(<span class="hljs-string">'#title'</span>).val();
+        <span class="hljs-keyword">var</span> excerpt = $(<span class="hljs-string">'#excerpt'</span>).val();
+        <span class="hljs-keyword">var</span> submittedOn = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>();
+        <span class="hljs-keyword">var</span> store = <span class="hljs-keyword">this</span>.get(<span class="hljs-string">'store'</span>);
+        <span class="hljs-keyword">var</span> story = store.createRecord(<span class="hljs-string">'story'</span>,{
+            url : url,
+            tags : tags,
+            fullname : fullname,
+            title : title,
+            excerpt : excerpt,
+            submittedOn : submittedOn
+        });
+        story.save();
+        <span class="hljs-keyword">this</span>.transitionToRoute(<span class="hljs-string">'index'</span>);
+    }
+ }
+});
+</code></pre>
+
+<p>以上代码展示了如何从获取表单中的值，然后使用store API在内存中创建记录。为了在localstorage中存储记录，我们需要调用Story对象的save方法。最后，我们将用户重定向到<code>index</code>路由。</p>
+
+<p>接着我们测试下这个应用，创建一个新的报道，接着打开Chrome开发者工具，在资源区域你可以查看这则报道。</p>
+
+<h2 id="articleHeader11">第六步 显示所有报道</h2>
+
+<p>接着我们要做的是，当用户访问首页的时候，展示所有报道。</p>
+
+<p>正如我之前提到的，路由负责询问model。我们将加上IndexRoute，它会找出本地存储中保存的所有报道。</p>
+
+<div class="widget-codetool" style="display:none;"><button class="selectCode btn btn-xs">全选</button><button href="javascript:void(0);" class="copyCode btn btn-xs" data-clipboard-text="App.IndexRoute = Ember.Route.extend({
+    model : function(){
+        var stories = this.get(&#39;store&#39;).findAll(&#39;story&#39;);
+        return stories;
+    }
+});
+" data-toggle="tooltip" data-placement="top" title="">复制</button><button href="javascript:void(0);" class="saveToNote btn btn-xs">放进笔记</button></div><pre class="hljs javascript"><code class="lang-js">App.IndexRoute = Ember.Route.extend({
+    model : <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span></span>{
+        <span class="hljs-keyword">var</span> stories = <span class="hljs-keyword">this</span>.get(<span class="hljs-string">'store'</span>).findAll(<span class="hljs-string">'story'</span>);
+        <span class="hljs-keyword">return</span> stories;
+    }
+});
+</code></pre>
+
+<p>每个路由支持一个模板。IndexRoute支持index模板，因此我们需要修改<code>index.html</code>：</p>
+
+<div class="widget-codetool" style="display:none;"><button class="selectCode btn btn-xs">全选</button><button href="javascript:void(0);" class="copyCode btn btn-xs" data-clipboard-text="  &lt;script type=&quot;text/x-handlebars&quot; id=&quot;index&quot;&gt;
+    &lt;div class=&quot;row&quot;&gt;
+      &lt;div class=&quot;col-md-4&quot;&gt;
+        &lt;table class=&#39;table&#39;&gt;
+          &lt;thead&gt;
+            &lt;tr&gt;&lt;th&gt;Recent Stories&lt;/th&gt;&lt;/tr&gt;
+          &lt;/thead&gt;
+          {{#each controller}}
+            &lt;tr&gt;&lt;td&gt;
+
+              {{title}}
+
+            &lt;/td&gt;&lt;/tr&gt;
+
+          {{/each}}
+        &lt;/table&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;col-md-8&quot;&gt;
+        {{outlet}}
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/script&gt;
+" data-toggle="tooltip" data-placement="top" title="">复制</button><button href="javascript:void(0);" class="saveToNote btn btn-xs">放进笔记</button></div><pre class="hljs cs"><code class="lang-html">  &lt;script type=<span class="hljs-string">"text/x-handlebars"</span> id=<span class="hljs-string">"index"</span>&gt;
+    &lt;div <span class="hljs-keyword">class</span>=<span class="hljs-string">"row"</span>&gt;
+      &lt;div <span class="hljs-keyword">class</span>=<span class="hljs-string">"col-md-4"</span>&gt;
+        &lt;table <span class="hljs-keyword">class</span>=<span class="hljs-string">'table'</span>&gt;
+          &lt;thead&gt;
+            &lt;tr&gt;&lt;th&gt;Recent Stories&lt;/th&gt;&lt;/tr&gt;
+          &lt;/thead&gt;
+          {{<span class="hljs-preprocessor">#each controller}}</span>
+            &lt;tr&gt;&lt;td&gt;
+
+              {{title}}
+
+            &lt;/td&gt;&lt;/tr&gt;
+
+          {{/each}}
+        &lt;/table&gt;
+      &lt;/div&gt;
+      &lt;div <span class="hljs-keyword">class</span>=<span class="hljs-string">"col-md-8"</span>&gt;
+        {{outlet}}
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/script&gt;
+</code></pre>
+
+<p>现在访问<code>/</code>，我们会看到一个报道的列表：</p>
+
+<p><img data-src="http://segmentfault.com/img/bVbHfo" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC" style="cursor: pointer;"></p>
+
+<p>还有一个问题，报道没有按照时间顺序排列。我们将创建一个IndexController负责排序。我们指定依照<code>submittedOn</code>属性倒序排列，以确保新的报道出现在上面。</p>
+
+<div class="widget-codetool" style="display:none;"><button class="selectCode btn btn-xs">全选</button><button href="javascript:void(0);" class="copyCode btn btn-xs" data-clipboard-text="App.IndexController = Ember.ArrayController.extend({
+    sortProperties : [&#39;submittedOn&#39;],
+    sortAscending : false
+});
+" data-toggle="tooltip" data-placement="top" title="">复制</button><button href="javascript:void(0);" class="saveToNote btn btn-xs">放进笔记</button></div><pre class="hljs coffeescript"><code class="lang-js">App.IndexController = Ember.ArrayController.extend({
+    sortProperties : [<span class="hljs-string">'submittedOn'</span>],
+    sortAscending : <span class="hljs-literal">false</span>
+});
+</code></pre>
+
+<p>修改之后，我们会看到按照submittedOn属性排序的报道。</p>
+
+<p><img data-src="http://segmentfault.com/img/bVbHfp" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC" style="cursor: pointer;"></p>
+
+<h2 id="articleHeader12">第七步 查看单独的报道</h2>
+
+<p>最后要实现的功能是：用户点击某则报道的时候会看到详细信息。我们加一个路由：</p>
+
+<div class="widget-codetool" style="display:none;"><button class="selectCode btn btn-xs">全选</button><button href="javascript:void(0);" class="copyCode btn btn-xs" data-clipboard-text="App.Router.map(function() {
+    this.resource(&#39;index&#39;,{path : &#39;/&#39;},function(){
+        this.resource(&#39;story&#39;, { path:&#39;/stories/:story_id&#39; });
+    });
+
+    this.resource(&#39;newstory&#39; , {path : &#39;story/new&#39;});
+
+});
+" data-toggle="tooltip" data-placement="top" title="">复制</button><button href="javascript:void(0);" class="saveToNote btn btn-xs">放进笔记</button></div><pre class="hljs javascript"><code class="lang-js">App.Router.map(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
+    <span class="hljs-keyword">this</span>.resource(<span class="hljs-string">'index'</span>,{path : <span class="hljs-string">'/'</span>},<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span></span>{
+        <span class="hljs-keyword">this</span>.resource(<span class="hljs-string">'story'</span>, { path:<span class="hljs-string">'/stories/:story_id'</span> });
+    });
+
+    <span class="hljs-keyword">this</span>.resource(<span class="hljs-string">'newstory'</span> , {path : <span class="hljs-string">'story/new'</span>});
+
+});
+</code></pre>
+
+<p>以上的代码展示了如何嵌套路由。</p>
+
+<p><code>:story_id</code>部分叫做动态字段，因为相应的报道 id会被注入URL。</p>
+
+<p>然后我们添加根据报道id获取报道的StoryRoute。</p>
+
+<div class="widget-codetool" style="display:none;"><button class="selectCode btn btn-xs">全选</button><button href="javascript:void(0);" class="copyCode btn btn-xs" data-clipboard-text="App.StoryRoute = Ember.Route.extend({
+    model : function(params){
+        var store = this.get(&#39;store&#39;);
+        return store.find(&#39;story&#39;,params.story_id);
+    }
+});
+" data-toggle="tooltip" data-placement="top" title="">复制</button><button href="javascript:void(0);" class="saveToNote btn btn-xs">放进笔记</button></div><pre class="hljs cs"><code class="lang-js">App.StoryRoute = Ember.Route.extend({
+    model : function(<span class="hljs-keyword">params</span>){
+        <span class="hljs-keyword">var</span> store = <span class="hljs-keyword">this</span>.<span class="hljs-keyword">get</span>(<span class="hljs-string">'store'</span>);
+        <span class="hljs-keyword">return</span> store.find(<span class="hljs-string">'story'</span>,<span class="hljs-keyword">params</span>.story_id);
+    }
+});
+</code></pre>
+
+<p>最后，我们更新下<code>index.html</code>，给每个报道添加链接：</p>
+
+<div class="widget-codetool" style="display:none;"><button class="selectCode btn btn-xs">全选</button><button href="javascript:void(0);" class="copyCode btn btn-xs" data-clipboard-text="&lt;script type=&quot;text/x-handlebars&quot; id=&quot;index&quot;&gt;
+    &lt;div class=&quot;row&quot;&gt;
+      &lt;div class=&quot;col-md-4&quot;&gt;
+        &lt;table class=&#39;table&#39;&gt;
+          &lt;thead&gt;
+            &lt;tr&gt;&lt;th&gt;Recent Stories&lt;/th&gt;&lt;/tr&gt;
+          &lt;/thead&gt;
+          {{#each controller}}
+            &lt;tr&gt;&lt;td&gt;
+            {{#link-to &#39;story&#39; this}}
+              {{title}}
+            {{/link-to}}
+            &lt;/td&gt;&lt;/tr&gt;
+
+          {{/each}}
+        &lt;/table&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;col-md-8&quot;&gt;
+        {{outlet}}
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/script&gt;
+
+  &lt;script type=&quot;text/x-handlebars&quot; id=&quot;story&quot;&gt;
+    &lt;h1&gt;{{title}}&lt;/h1&gt;
+    &lt;h2&gt; by {{fullname}} &lt;small class=&quot;muted&quot;&gt;{{submittedOn}}&lt;/small&gt;&lt;/h2&gt;
+    {{#each tagnames}}
+
+        &lt;span class=&quot;label label-primary&quot;&gt;{{this}}&lt;/span&gt;
+
+      {{/each}}
+    &lt;hr&gt;
+    &lt;p class=&quot;lead&quot;&gt;
+      {{excerpt}}
+    &lt;/p&gt;
+
+  &lt;/script&gt;
+" data-toggle="tooltip" data-placement="top" title="">复制</button><button href="javascript:void(0);" class="saveToNote btn btn-xs">放进笔记</button></div><pre class="hljs cs"><code class="lang-html">&lt;script type=<span class="hljs-string">"text/x-handlebars"</span> id=<span class="hljs-string">"index"</span>&gt;
+    &lt;div <span class="hljs-keyword">class</span>=<span class="hljs-string">"row"</span>&gt;
+      &lt;div <span class="hljs-keyword">class</span>=<span class="hljs-string">"col-md-4"</span>&gt;
+        &lt;table <span class="hljs-keyword">class</span>=<span class="hljs-string">'table'</span>&gt;
+          &lt;thead&gt;
+            &lt;tr&gt;&lt;th&gt;Recent Stories&lt;/th&gt;&lt;/tr&gt;
+          &lt;/thead&gt;
+          {{<span class="hljs-preprocessor">#each controller}}</span>
+            &lt;tr&gt;&lt;td&gt;
+            {{<span class="hljs-preprocessor">#link-to 'story' this}}</span>
+              {{title}}
+            {{/link-to}}
+            &lt;/td&gt;&lt;/tr&gt;
+
+          {{/each}}
+        &lt;/table&gt;
+      &lt;/div&gt;
+      &lt;div <span class="hljs-keyword">class</span>=<span class="hljs-string">"col-md-8"</span>&gt;
+        {{outlet}}
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/script&gt;
+
+  &lt;script type=<span class="hljs-string">"text/x-handlebars"</span> id=<span class="hljs-string">"story"</span>&gt;
+    &lt;h1&gt;{{title}}&lt;/h1&gt;
+    &lt;h2&gt; by {{fullname}} &lt;small <span class="hljs-keyword">class</span>=<span class="hljs-string">"muted"</span>&gt;{{submittedOn}}&lt;/small&gt;&lt;/h2&gt;
+    {{<span class="hljs-preprocessor">#each tagnames}}</span>
+
+        &lt;span <span class="hljs-keyword">class</span>=<span class="hljs-string">"label label-primary"</span>&gt;{{<span class="hljs-keyword">this</span>}}&lt;/span&gt;
+
+      {{/each}}
+    &lt;hr&gt;
+    &lt;p <span class="hljs-keyword">class</span>=<span class="hljs-string">"lead"</span>&gt;
+      {{excerpt}}
+    &lt;/p&gt;
+
+  &lt;/script&gt;
+</code></pre>
+
+<p>修改完毕地后，可以在浏览器中直接看到结果。</p>
+
+<p><img data-src="http://segmentfault.com/img/bVbHft" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC" style="cursor: pointer;"></p>
+
+<h2 id="articleHeader13">第八步 为submittedOn日期添加格式</h2>
+
+<p>Ember下有辅助函数的概念。所有Handlebars模板都可以调用辅助函数。</p>
+
+<p>我们将使用<code>moment.js</code>库为日期添加格式。将以下代码加入index.html。</p>
+
+<div class="widget-codetool" style="display:none;"><button class="selectCode btn btn-xs">全选</button><button href="javascript:void(0);" class="copyCode btn btn-xs" data-clipboard-text="&lt;script src=&quot;http://cdnjs.cloudflare.com/ajax/libs/moment.js/2.4.0/moment.min.js&quot;&gt;&lt;/script&gt;
+" data-toggle="tooltip" data-placement="top" title="">复制</button><button href="javascript:void(0);" class="saveToNote btn btn-xs">放进笔记</button></div><pre class="hljs xml"><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-title">script</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"http://cdnjs.cloudflare.com/ajax/libs/moment.js/2.4.0/moment.min.js"</span>&gt;</span><span class="javascript"></span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
+</code></pre>
+
+<p>接着我们将定义我们的第一个辅助函数，该函数将日期转为人类可读的形式：</p>
+
+<div class="widget-codetool" style="display:none;"><button class="selectCode btn btn-xs">全选</button><button href="javascript:void(0);" class="copyCode btn btn-xs" data-clipboard-text="Ember.Handlebars.helper(&#39;format-date&#39;, function(date){
+    return moment(date).fromNow();
+});
+" data-toggle="tooltip" data-placement="top" title="">复制</button><button href="javascript:void(0);" class="saveToNote btn btn-xs">放进笔记</button></div><pre class="hljs javascript"><code class="lang-js">Ember.Handlebars.helper(<span class="hljs-string">'format-date'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(date)</span></span>{
+    <span class="hljs-keyword">return</span> moment(date).fromNow();
+});
+</code></pre>
+
+<p>最后我们在报道模板中加入<code>format-data</code>辅助函数。</p>
+
+<div class="widget-codetool" style="display:none;"><button class="selectCode btn btn-xs">全选</button><button href="javascript:void(0);" class="copyCode btn btn-xs" data-clipboard-text="&lt;script type=&quot;text/x-handlebars&quot; id=&quot;story&quot;&gt;
+    &lt;h1&gt;{{title}}&lt;/h1&gt;
+    &lt;h2&gt; by {{fullname}} &lt;small class=&quot;muted&quot;&gt;{{format-date submittedOn}}&lt;/small&gt;&lt;/h2&gt;
+    {{#each tagnames}}
+
+        &lt;span class=&quot;label label-primary&quot;&gt;{{this}}&lt;/span&gt;
+
+      {{/each}}
+    &lt;hr&gt;
+    &lt;p class=&quot;lead&quot;&gt;
+      {{excerpt}}
+    &lt;/p&gt;
+
+  &lt;/script&gt;
+" data-toggle="tooltip" data-placement="top" title="">复制</button><button href="javascript:void(0);" class="saveToNote btn btn-xs">放进笔记</button></div><pre class="hljs cs"><code class="lang-html">&lt;script type=<span class="hljs-string">"text/x-handlebars"</span> id=<span class="hljs-string">"story"</span>&gt;
+    &lt;h1&gt;{{title}}&lt;/h1&gt;
+    &lt;h2&gt; by {{fullname}} &lt;small <span class="hljs-keyword">class</span>=<span class="hljs-string">"muted"</span>&gt;{{format-date submittedOn}}&lt;/small&gt;&lt;/h2&gt;
+    {{<span class="hljs-preprocessor">#each tagnames}}</span>
+
+        &lt;span <span class="hljs-keyword">class</span>=<span class="hljs-string">"label label-primary"</span>&gt;{{<span class="hljs-keyword">this</span>}}&lt;/span&gt;
+
+      {{/each}}
+    &lt;hr&gt;
+    &lt;p <span class="hljs-keyword">class</span>=<span class="hljs-string">"lead"</span>&gt;
+      {{excerpt}}
+    &lt;/p&gt;
+
+  &lt;/script&gt;
+</code></pre>
+
+<p>报道页面的效果如下：</p>
+
+<p><img data-src="http://segmentfault.com/img/bVbHfB" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC" style="cursor: pointer;"></p>
+
+<p>今天就到这里了。持续反馈。</p>
+
+<hr>
+
+<p>原文 <a rel="nofollow" href="https://www.openshift.com/blogs/day-19-ember-the-missing-emberjs-tutorial" target="_blank">Day 19: Ember--The Missing EmberJS Tutorial</a><br>
+翻译 <a rel="nofollow" href="http://www.segmentfault.com/">SegmentFault</a></p>
+
+                </div>
+                                
+                <div class="clearfix">
+
+                    <ul class="taglist--inline pull-left">
+                                                    <li class="tagPopup"><a class="tag" href="http://segmentfault.com/t/ember.js/blogs" data-toggle="popover" data-img="http://sfault-avatar.b0.upaiyun.com/395/296/3952960072-1040000000361609_huge100" data-placement="top" data-original-title="ember.js" data-id="1040000000361609">ember.js</a></li>
+                                                    <li class="tagPopup"><a class="tag" href="http://segmentfault.com/t/javascript/blogs" data-toggle="popover" data-img="http://sfault-avatar.b0.upaiyun.com/195/823/1958237468-1040000000089436_huge100" data-placement="top" data-original-title="javascript" data-id="1040000000089436">javascript</a></li>
+                                                    <li class="tagPopup"><a class="tag" href="http://segmentfault.com/t/%E5%89%8D%E7%AB%AF/blogs" data-toggle="popover" data-img="http://sfault-avatar.b0.upaiyun.com/330/484/3304844401-1040000000089899_huge100" data-placement="top" data-original-title="前端" data-id="1040000000089899">前端</a></li>
+                                                    <li class="tagPopup"><a class="tag" href="http://segmentfault.com/t/html5/blogs" data-toggle="popover" data-img="http://sfault-avatar.b0.upaiyun.com/320/807/3208078129-1040000000089409_huge100" data-placement="top" data-original-title="html5" data-id="1040000000089409">html5</a></li>
+                                            </ul>
+
+                </div>
+                <div class="clearfix mt10">
+                    <ul class="article-operation list-inline pull-left">
+                        <li><a href="http://segmentfault.com/a/1190000000365519" class="text-muted">链接</a></li>
+                                                                                                <li class="dropdown">
+                            <a href="javascript:void(0);" class="dropdown-toggle text-muted" data-toggle="dropdown">更多<b class="caret"></b></a>
+                            <ul class="dropdown-menu dropdown-menu-left">
+                                <li><a href="http://segmentfault.com/a/1190000000365519#911" data-toggle="modal" data-target="#911" data-type="article" data-id="1190000000365519" data-typetext="文章">举报</a></li>
+                                                                                                                                                                                                        </ul>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="text-center mt10">
+                    
+                        <button type="button" id="mainLike" data-id="1190000000365519" class="btn btn-success btn-lg mr10">推荐
+                                    </button>
+                    
+                                            <button type="button" id="mainBookmark" data-type="article" data-id="1190000000365519" class="btn btn-default btn-lg  active">已收藏</button>
+                                    </div>
+
+                
+                                    <div class="recommend-post pt30 mt40 mb30 border-top">
+                        <h4 class="mt0">你可能感兴趣的文章</h4>
+                        <ul class="widget-links list-unstyled">
+                                                            <li class="widget-links__item">
+                                    <a href="http://segmentfault.com/a/1190000003701920" title="我收藏的github项目2">我收藏的github项目2</a>
+                                    <small class="text-muted">
+                                        140 浏览
+                                    </small>
+                                </li>
+                                                            <li class="widget-links__item">
+                                    <a href="http://segmentfault.com/a/1190000000361621" title="为什么Discourse选择ember.js">为什么Discourse选择ember.js</a>
+                                    <small class="text-muted">
+                                        3 收藏，1.9k 浏览
+                                    </small>
+                                </li>
+                                                            <li class="widget-links__item">
+                                    <a href="http://segmentfault.com/a/1190000000362479" title="Angular.js vs  Ember.js">Angular.js vs  Ember.js</a>
+                                    <small class="text-muted">
+                                        20 收藏，7.4k 浏览
+                                    </small>
+                                </li>
+                                                    </ul>
+                    </div>
+                                <!-- <ul class="list-unstyled text-muted mt30">
+                                        <li>上一篇：<a href="/a/1190000000365431">机器学习其实比你想的更简单</a></li>
+                                                            <li class="mt5">下一篇：<a href="/a/1190000000365607">Maximum Awesome：移动支付 Square 团队开源的 Vim 配置文件</a></li>
+                                    </ul> -->
+
+                <h2 class="h4 post-comment-title">讨论区</h2>
+                <div class="widget-comments" id="comment-1190000000365519" data-id="1190000000365519">
+                        <div class="widget-comments__form row">
+                                    <form class="col-md-10 col-xs-12">
+                    <div class="form-group mb0">
+                        <input name="id" type="hidden" value="1190000000365519">
+                        <textarea name="text" class="form-control" id="commentText-1190000000365519" data-id="1190000000365519" placeholder="添加评论" style="overflow: hidden; word-wrap: break-word; height: 28px;"></textarea>
+                    </div>
+                </form>
+                <div class="col-md-2 col-xs-12">
+                    <button type="submit" class="btn btn-primary btn-sm btn-block postComment m-mt15" data-id="1190000000365519">提交评论</button>
+                    <div class="mt10"><a href="javascript:void(0);" class="toggle-comment-helper">语法提示</a></div>
+                </div>
+                <div class="col-md-10 col-xs-12 fmt comment-helper" data-rank="0" style="">
+                    <div class="alert alert-warning mb10 mt10">评论支持部分 Markdown 语法：<code>**bold**</code> <code>_italic_</code> <code>[link](http://example.com)</code> <code>&gt; 引用</code> <code>`code`</code> <code>- 列表</code>。<br>同时，被你 @ 的用户也会收到通知</div>
+                </div>
+            
+    </div><!-- /.widget-comments__form -->
+    </div><!-- /.widget-comments -->
+
+
+
+                
+                
+            </div><!-- /.main -->
+
+
+            <div class="col-xs-12 col-md-3 side">
+                <div class="sfad-sidebar">
+    <div class="sfad-item" data-adn="ad-1119908" id="adid-1119908"><div id="BAIDU_DUP_wrapper_1119908_0"><iframe id="baidu_clb_slot_iframe_1119908_0" src="./Day 19_ EmberJS 入门指南 - 新闻 - SegmentFault_files/saved_resource.html" onload="BAIDU_DUP_CLB_renderFrame(&#39;1119908_0&#39;)" width="233" height="150" vspace="0" hspace="0" allowtransparency="true" scrolling="no" marginwidth="0" marginheight="0" frameborder="0" style="border:0; vertical-align:bottom; margin:0; display:block;"></iframe></div></div>
+
+</div>
+
+
+                <div class="widget-box no-border">
+                    <p class="text-muted">本文隶属于专栏</p>
+                    <h4 class="fz16"><a href="http://segmentfault.com/blog/news">新闻</a></h4>
+
+                    <p class="wordbreak">新闻资讯一手掌握</p>
+                                                                        <button type="button" class="btn btn-default follow-article" data-do="follow" data-type="blog" data-id="1200000000309635">关注专栏
+                            </button>
+                                                            </div>
+
+                
+                                                <div class="widget-share__full" data-text="Day 19: EmberJS 入门指南" data-url="http://segmentfault.com/a/1190000000365519" data-shorturl="http://sfau.lt/b5bHfD"><div style="margin-bottom:5px;">分享扩散：</div> <div class="widget-share-url" data-url="http://segmentfault.com/a/1190000000365519" data-shorturl="http://sfau.lt/b5bHfD"><div class="input-group"> <input type="text" class="form-control input-sm" readonly="readonly" data-url="http://segmentfault.com/a/1190000000365519" data-shorturl="http://sfau.lt/b5bHfD" value="http://segmentfault.com/a/1190000000365519"> <span class="input-group-btn"> <button class="btn btn-default btn-sm" type="button" data-share-target="shorturl">缩短</button> </span> </div> </div> <div class="widget-share-network sharer-0" style="display: block;"><ul class="sn-inline"><li data-network="weibo"><a href="javascript:void(0);" class="entypo-weibo icon-sn-weibo share-1" data-toggle="tooltip" data-placement="top" title="" data-original-title="分享至新浪微博">新浪微博</a></li><li data-network="wechart"><a href="javascript:void(0);" class="entypo-wechart icon-sn-wechat share-2" data-toggle="tooltip" data-placement="top" title="" data-original-title="分享至微信">微信</a></li><li data-network="twitter"><a href="javascript:void(0);" class="entypo-twitter icon-sn-twitter share-3" data-toggle="tooltip" data-placement="top" title="" data-original-title="分享至 Twitter">Twitter</a></li><li data-network="facebook"><a href="javascript:void(0);" class="entypo-facebook icon-sn-facebook share-4" data-toggle="tooltip" data-placement="top" title="" data-original-title="分享至 Facebook">Facebook</a></li><li data-network="renren"><a href="javascript:void(0);" class="entypo-renren icon-sn-renren share-5" data-toggle="tooltip" data-placement="top" title="" data-original-title="分享至人人网">人人网</a></li><li data-network="douban"><a href="javascript:void(0);" class="entypo-douban icon-sn-douban share-6" data-toggle="tooltip" data-placement="top" title="" data-original-title="分享至豆瓣">豆瓣</a></li></ul></div></div>
+
+                <div class="post-nav hidden-xs side-outline hidden-sm" style="display: block;">
+                    <div class="panel panel-default widget-outline">
+                        <div class="panel-heading">文章目录</div>
+                        <div class="panel-body">
+                            <div class="nav-body" style="top: 0px;">
+                                <div class="highlight-title"></div>
+                                <ul class="articleIndex"><li><a href="http://segmentfault.com/a/1190000000365519#articleHeader0">应用</a></li><li><a href="http://segmentfault.com/a/1190000000365519#articleHeader1">什么是Ember？</a></li><li><a href="http://segmentfault.com/a/1190000000365519#articleHeader2">Ember核心概念</a></li><li><a href="http://segmentfault.com/a/1190000000365519#articleHeader3">Ember的Chrome插件</a></li><li><a href="http://segmentfault.com/a/1190000000365519#articleHeader4">Github仓库</a></li><li><a href="http://segmentfault.com/a/1190000000365519#articleHeader5">第一步 下载新手套装</a></li><li><a href="http://segmentfault.com/a/1190000000365519#articleHeader6">第二步 启用GruntJS监视</a></li><li><a href="http://segmentfault.com/a/1190000000365519#articleHeader7">第三步 理解新手模板应用</a></li><li><a href="http://segmentfault.com/a/1190000000365519#articleHeader8">第四步 移除新手模板代码</a></li><li><a href="http://segmentfault.com/a/1190000000365519#articleHeader9">第五步 添加Twitter Bootstrap</a></li><li><a href="http://segmentfault.com/a/1190000000365519#articleHeader10">第五步 提交新报道</a></li><li><a href="http://segmentfault.com/a/1190000000365519#articleHeader11">第六步 显示所有报道</a></li><li><a href="http://segmentfault.com/a/1190000000365519#articleHeader12">第七步 查看单独的报道</a></li><li><a href="http://segmentfault.com/a/1190000000365519#articleHeader13">第八步 为submittedOn日期添加格式</a></li></ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div><!-- /.side -->
+        </div>
+    </div>
+</div>
+
+<div id="shareToWeiboModal" class="modal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">
+                    <span aria-hidden="true">×</span><span class="sr-only">Close</span>
+                </button>
+                <h4 class="modal-title">分享</h4>
+            </div>
+            <div class="modal-body">
+                <p class="sfModal-content"><form class="bookmarklist-form"><p class="required">添加到收藏夹</p><ul class="bookmarklist list-unstyled mb0">    <li data-id="1230000004021358" class="active"><input type="checkbox">ember</li></ul>    <div class="mt20"><a href="http://segmentfault.com/a/1190000000365519#" class="new-bookmark">+ 创建新收藏夹</a></div></form></p>
+            </div>
+            <div class="modal-footer ">
+                <button type="button" class="btn btn-default dont-likeweibo" data-dismiss="modal">取消并且不再弹出</button>
+                <a href="" id="shareLink" class="btn btn-primary done-btn" target="_blank" onclick="$(&#39;#shareToWeiboModal&#39;).modal(&#39;hide&#39;)">分享</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div id="911" class="modal widget-911">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title">举报<span class="type-911">问题</span></h4>
+            </div>
+            <div class="modal-body">
+                <p class="alert alert-warning" id="J_returnMsg" style="display:none"></p>
+                <p><strong class="required">举报理由：</strong></p>
+                <div id="reportDescription">
+                <div class="radio-911 radio all">
+                    <label>
+                        <input type="radio" name="descRadio" checked="" value="推广（招聘、广告、SEO 等）方面的内容">
+                        推广（招聘、广告、SEO 等）方面的内容
+                    </label>
+                </div>
+                <div class="radio-911 radio all">
+                    <label>
+                        <input type="radio" name="descRadio" value="带有人身攻击、辱骂、仇恨等违反条款的内容">
+                        带有人身攻击、辱骂、仇恨等违反条款的内容
+                    </label>
+                </div>
+                <div class="radio-911 radio question-only">
+                    <label>
+                        <input type="radio" name="descRadio" value="与已有问题重复">
+                        与已有问题重复（请编辑该提问指向已有相同问题）
+                    </label>
+                </div>
+                <div class="radio-911 radio all">
+                    <label>
+                        <input type="radio" name="descRadio" value="不友善内容">
+                        不友善内容
+                    </label>
+                </div>
+                <div class="radio-911 radio answer-only">
+                    <label>
+                        <input type="radio" name="descRadio" value="答非所问，不符合答题要求">
+                        答非所问，不符合答题要求
+                    </label>
+                </div>
+                <div class="radio-911 radio all" id="btwRadio">
+                    <label>
+                        <input type="radio" name="descRadio" value="">
+                        其他原因（请补充说明）
+                    </label>
+                </div>
+                <div class="hide btw">
+                    <p class="mt20"><strong>补充说明：</strong></p>
+                    <textarea class="form-control" rows="3" autocomplete="false" id="911Desc"></textarea>
+                </div>
+                                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                <button type="button" id="911Submit" class="btn btn-primary">提交</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<footer id="footer">
+    <div class="container">
+        <div class="row hidden-xs">
+            <dl class="col-sm-2 site-link">
+                <dt>网站相关</dt>
+                <dd><a href="http://segmentfault.com/about">关于我们</a></dd>
+                <dd><a href="http://segmentfault.com/tos">服务条款</a></dd>
+                <dd><a href="http://segmentfault.com/faq">帮助中心</a></dd>
+                <dd><a href="http://segmentfault.com/repu">声望与权限</a></dd>
+                <dd><a href="http://segmentfault.com/markdown">编辑器语法</a></dd>
+                <dd><a href="http://weekly.segmentfault.com/">每周精选</a></dd>
+                <dd><a href="http://segmentfault.com/app">App 下载</a></dd>
+            </dl>
+            <dl class="col-sm-2 site-link">
+                <dt>联系合作</dt>
+                <dd><a href="http://segmentfault.com/contact">联系我们</a></dd>
+                <dd><a href="http://segmentfault.com/hiring">加入我们</a></dd>
+                <dd><a href="http://segmentfault.com/link">合作伙伴</a></dd>
+                <dd><a href="http://segmentfault.com/press">媒体报道</a></dd>
+                <dd><a href="http://0x.segmentfault.com/">建议反馈</a></dd>
+                <dd><a href="http://pan.baidu.com/share/link?shareid=604288&amp;uk=839272106" target="_blank">Logo 下载</a>
+                </dd>
+            </dl>
+            <dl class="col-sm-2 site-link">
+                <dt>常用链接</dt>
+                <dd><a href="https://chrome.google.com/webstore/detail/segmentfault-%E7%AC%94%E8%AE%B0/pjklfdmleagfaekibdccmhlhellefcfo" target="_blank">笔记插件</a></dd>
+                <dd><a href="http://mirrors.segmentfault.com/" target="_blank">文档镜像</a></dd>
+                <dd>订阅：<a href="http://segmentfault.com/feeds">问答</a> / <a href="http://segmentfault.com/feeds/blogs">文章</a></dd>
+                <dd><a href="http://segmentfault.com/events?category=4">黑客马拉松</a></dd>
+                <!--             <dd><a href="http://zs.segmentfault.com/" target="_blank">一起涨姿势</a></dd> -->
+                <dd><a href="https://namebeta.com/" target="_blank">域名搜索注册</a></dd>
+            </dl>
+            <dl class="col-sm-2 site-link">
+                <dt>关注我们</dt>
+                <dd><a href="https://github.com/SegmentFault" target="_blank">GitHub</a></dd>
+                <dd><a href="https://twitter.com/segment_fault" target="_blank">Twitter</a></dd>
+                <!-- <dd><a href="http://page.renren.com/699146294" target="_blank">人人网</a></dd> -->
+                <dd><a href="https://www.linkedin.com/company/segmentfault" target="_blank">LinkedIn</a></dd>
+                <dd><a href="http://weibo.com/segmentfault" target="_blank">新浪微博</a></dd>
+                <dd><a href="http://i.youku.com/segmentfault" target="_blank">优酷主页</a></dd>
+                <dd><a href="http://segmentfault.com/giveaways" target="_blank">开发者福利</a></dd>
+                <dd><a href="http://segmentfault.com/blog/segmentfault" target="_blank">开发日志</a></dd>
+            </dl>
+            <dl class="col-sm-4 site-link" id="license">
+                <dt>内容许可</dt>
+                <dd>除特别说明外，用户内容均采用 <a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-sa/3.0/cn/">知识共享署名-相同方式共享 3.0
+                        中国大陆许可协议</a> 进行许可
+                </dd>
+                <dd>本站由 <a target="_blank" href="http://qingcloud.com/">青云 QingCloud</a> 提供云计算服务<br><a target="_blank" href="https://www.upyun.com/?utm_source=segmentfault&amp;utm_medium=link&amp;utm_campaign=upyun&amp;md=segmentfault">又拍云</a>
+                    提供 CDN 存储服务
+                </dd>
+                <dd>
+                    <a key="55e59bd4efbfb0241247d4e4" logo_size="124x47" logo_type="realname" href="http://www.anquan.org/authenticate/cert/?site=segmentfault.com&amp;at=realname" target="_blank">
+                        <script src="./Day 19_ EmberJS 入门指南 - 新闻 - SegmentFault_files/aq_auth.js"></script><span style="display:none;" class="LOGO_aq_jsonp_wrap_" id="AQ_logo_span_init_1"><script src="./Day 19_ EmberJS 入门指南 - 新闻 - SegmentFault_files/saved_resource" type="text/javascript" async="true"></script></span>
+                    <img src="./Day 19_ EmberJS 入门指南 - 新闻 - SegmentFault_files/sm_124x47.png" alt="安全联盟认证" width="124" height="47" style="border: none;"></a>
+                    <!-- Begin DigiCert site seal HTML and JavaScript -->
+                    <div id="DigiCertClickID_2bMgZTfe" data-language="en" style="float: left; margin-right: 10px"><div id="DigiCertClickID_2bMgZTfeSeal" style="text-decoration: none; text-align: center; display: block; vertical-align: baseline; font-size: 100%; font-style: normal; text-indent: 0px; line-height: 1; width: auto; margin: 0px auto; padding: 0px; border: 0px; position: relative; top: 0px; right: 0px; bottom: 0px; left: 0px; clear: both; float: none; cursor: default; background: transparent;"><img src="./Day 19_ EmberJS 入门指南 - 新闻 - SegmentFault_files/saved_resource(1)" alt="DigiCert Seal" style="text-decoration: none; text-align: center; display: block; vertical-align: baseline; font-size: 100%; font-style: normal; text-indent: 0px; line-height: 1; width: auto; margin: 0px auto; padding: 0px; border: 0px; position: relative; top: 0px; right: 0px; bottom: 0px; left: 0px; clear: both; float: none; cursor: pointer; background: transparent;"></div></div>
+                    <script type="text/javascript">
+                        var __dcid = __dcid || [];
+                        __dcid.push(["DigiCertClickID_2bMgZTfe", "3", "s", "black", "2bMgZTfe"]);
+                        (function () {
+                            var cid   = document.createElement("script");
+                            cid.async = true;
+                            cid.src   = "//seal.digicert.com/seals/cascade/seal.min.js";
+                            var s     = document.getElementsByTagName("script");
+                            var ls    = s[(s.length - 1)];
+                            ls.parentNode.insertBefore(cid, ls.nextSibling);
+                        }());
+                    </script><script async="" src="./Day 19_ EmberJS 入门指南 - 新闻 - SegmentFault_files/seal.min.js"></script>
+                    <!-- End DigiCert site seal HTML and JavaScript -->
+                </dd>
+            </dl>
+        </div>
+        <div class="copyright">
+            Copyright © 2011-2015 SegmentFault. 当前呈现版本 15.11.13<br><a href="http://www.miibeian.gov.cn/" rel="nofollow">浙ICP备15005796号-2</a>
+        </div>
+        <p class="text-center">
+            <a class="js__view--selector hidden-sm hidden-md hidden-lg" data-action="mobile" href="javascript:;">移动版</a>
+            <a class="js__view--selector hidden-sm hidden-md hidden-lg" data-action="desktop" href="javascript:;">桌面版</a>
+        </p>
+    </div>
+</footer>
+
+<div id="fixedTools" class="hidden-xs hidden-sm">
+    <a id="backtop" class="hidden border-bottom" href="http://segmentfault.com/a/1190000000365519#">回顶部</a>
+
+    <div class="qrcodeWraper">
+        <a href="http://segmentfault.com/app#qrcode"><span class="glyphicon glyphicon-qrcode"></span></a>
+        <img id="qrcode" class="border" alt="sf-wechat" src="./Day 19_ EmberJS 入门指南 - 新闻 - SegmentFault_files/appQrcode.png">
+
+        <p class="qrcode-text">扫扫下载 App</p>
+    </div>
+</div>
+
+
+<div class="app-promotion-bar">
+    <a href="javascript:;"><i class="fa fa-close close"></i></a>
+    <div class="icon"></div>
+    <h5 class="title h5">SegmentFault</h5>
+    <p class="describe">一起探索更多未知</p>
+    <a class="download-btn btn btn-sm btn-primary" href="http://segmentfault.com/app#qrcode">下载 App</a>
+</div>
+
+<script id="loginModal" type="text/template">
+<div class="row bg-white login-modal">
+    <div class="col-md-4 col-sm-12 col-md-push-7 login-wrap">
+        <h1 class="h4 text-muted login-title">用户登录</h1>
+        <form action="/api/user/login" method="POST" role="form" class="mt30">
+            <div class="form-group">
+                <label class="control-label">Email</label>
+                <input type="email" class="form-control" name="mail" required placeholder="hello@segmentfault.com">
+            </div>
+            <div class="form-group">
+                <label class="control-label">密码</label>
+                <input type="password" class="form-control" name="password" required placeholder="密码">
+            </div>
+            <div class="form-group clearfix">
+                <div class="checkbox pull-left">
+                    <label><input name="remember" type="checkbox" value="1" checked> 记住登录状态</label>
+                </div>
+                <button type="submit" class="btn btn-primary pull-right pl20 pr20">登录</button>
+            </div>
+        </form>
+        <p class="h4 text-muted visible-xs-block h4">快速登录</p>
+        <div class="widget-login mt30">
+            <p class="text-muted mt5 mr10 pull-left hidden-xs">快速登录</p>
+            <a href="/user/oauth/google" class="btn pl5 pr5 mb5 btn-default btn-sm btn-sn-google"><span class="icon-sn-google"></span> <strong class="visible-xs-inline">Google 账号</strong></a>
+            <a href="/user/oauth/github" class="btn pl5 pr5 mb5 btn-default btn-sm btn-sn-github"><span class="icon-sn-github"></span> <strong class="visible-xs-inline">Github 账号</strong></a>
+            <a href="/user/oauth/weibo" class="btn pl5 pr5 mb5 btn-default btn-sm btn-sn-weibo"><span class="icon-sn-weibo"></span> <strong class="visible-xs-inline">新浪微博账号</strong></a>
+            <a href="/user/oauth/qq" class="btn pl5 pr5 mb5 btn-default btn-sm btn-sn-qq"><span class="icon-sn-qq"></span> <strong class="visible-xs-inline">QQ 账号</strong></a>
+            <a href="/user/oauth/weixin" class="btn pl5 pr5 mb5 btn-default btn-sm btn-sn-wechat"><span class="icon-sn-wechat"></span> <strong class="visible-xs-inline">微信账号</strong></a>
+            <button type="button" class="btn mb5 btn-default btn-sm btn-sn-more" id="loginShowMore">...</button>
+            <a href="/user/oauth/twitter" class="btn pl5 pr5 mb5 btn-default btn-sn-twitter btn-sm hidden"><span class="icon-sn-twitter"></span> <strong class="visible-xs-inline">Twitter 账号</strong></a>
+            <a href="/user/oauth/facebook" class="btn pl5 pr5 mb5 btn-default btn-sn-facebook btn-sm hidden"><span class="icon-sn-facebook"></span> <strong class="visible-xs-inline">Facebook 账号</strong></a>
+            <a href="/user/oauth/douban" class="btn pl5 pr5 mb5 btn-default btn-sn-douban btn-sm hidden"><span class="icon-sn-douban"></span> <strong class="visible-xs-inline">豆瓣账号</strong></a>
+        </div>
+    </div>
+    <div class="login-vline hidden-xs hidden-sm"></div>
+    <div class="col-md-4 col-md-pull-3 col-sm-12 login-wrap">
+        <h1 class="h4 text-muted login-title">创建新账号</h1>
+        <form action="/api/user/register" method="POST" role="form" class="mt30">
+            <div class="form-group">
+                <label for="name" class="control-label">用户名</label>
+                <input type="text" class="form-control" name="name" required placeholder="字母、数字等，用户名唯一">
+            </div>
+            <div class="form-group">
+                <label for="mail" class="control-label">Email</label>
+                <input type="hidden" style="display:none" name="mail">
+                <input type="email" autocomplete="off" class="form-control register-mail" name="mail" required placeholder="hello@segmentfault.com">
+            </div>
+            <div class="form-group">
+                <label for="password" class="control-label">密码</label>
+                <input type="password" class="form-control" name="password" required placeholder="不少于 6 位">
+            </div>
+            <div class="form-group" style="display:none;">
+                <label class="required control-label">验证码</label>
+                <input type="text" class="form-control" id="captcha" name="captcha" placeholder="请输入下方的验证码">
+                <div class="mt10"><a id="loginReloadCaptcha"  href="javascript:void(0)"><img data-src="/user/captcha?w=240&h=50" class="captcha" width="240" height="50" /></a></div>
+            </div>
+            <div class="form-group clearfix">
+                <div class="checkbox pull-left">
+                    同意并接受<a href="/tos" target="_blank">《服务条款》</a>
+                </div>
+                <button type="submit" class="btn btn-primary pl20 pr20 pull-right">注册</button>
+            </div>
+        </form>
+    </div>
+</div>
+<div class="text-center text-muted mt30">
+    <a href="/user/forgot" class="ml5">找回密码</a>
+</div>
+</script>
+
+        <div id="activate" class="modal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content ">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                <h4 class="modal-title">请激活邮箱</h4>
+            </div>
+            <div class="modal-body clearfix">
+                <div class="alert alert-warning">
+                    为了正常使用投票、评论、关注等功能，请验证你的邮箱、激活账号
+                </div>
+                <div class="mt30 mb30">
+                    <span class="text-muted activate-label pull-left">你的注册邮箱：</span>
+                    <span class="activate-showmail">
+                        <strong class="h4 session-mail">Chosan@segmentfault.com</strong>
+                        <a href="javascript:void(0);" class="ml10 activate-change">修改</a>
+                    </span>
+                    <form method="post" class="activate-form inline-block" style="display:none;">
+                        <div class="form-group col-sm-7 mb0">
+                            <input type="text" class="form-control mail" name="mail" value="Chosan@segmentfault.com" placeholder="邮箱">
+                        </div>
+                        <div class="form-group col-sm-5 mb0">
+                            <button class="btn btn-primary" type="submit">保存</button>
+                            <button class="btn btn-default activate-cancel" type="button">取消</button>
+                        </div>
+                    </form>
+                </div>
+                <p class="text-muted">
+                    如果你没收到激活邮件，请注意检查垃圾箱，或者 <a href="javascript:void(0);" class="activate-resend">重新发送激活邮件</a><span class="text-danger" style="display:none;">激活邮件已发送 （<span>120</span>）</span>
+                </p>
+                <div class="company-activete-tips">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    (function (w) {
+        w.SF = {
+            staticUrl: "http://static.segmentfault.com/v-564dd704"
+        };
+        w.SF.token = (function () {
+    var _LFQm = '1db'//'4h'
++''///*'5B'*/'5B'
++''///*'XWU'*/'XWU'
++'9f'//'ab'
++'49'//'zw'
++//'VMq'
+'d10'+'83'//'Ui'
++'uyV'//'uyV'
++//'0ft'
+'d8'+//'FR'
+'FR'+//'ISC'
+'8da'+'0'//'p'
++//'ti'
+'9'+//'c4y'
+'fc'+//'hL'
+'0e8'+//'t'
+'a17'+//'R'
+'b87'+'4e'//'w'
+, _ZhITkCh = [[12,15],[14,16]];
+
+    for (var i = 0; i < _ZhITkCh.length; i ++) {
+        _LFQm = _LFQm.substring(0, _ZhITkCh[i][0]) + _LFQm.substring(_ZhITkCh[i][1]);
+    }
+
+    return _LFQm;
+})();;
+    })(window);
+
+                var lock = {
+        type : "",
+        text : '',
+        table: {"ban_post":[1,"\u4f60\u5df2\u7ecf\u88ab\u7981\u8a00, \u65e0\u6cd5\u8fdb\u884c\u6b64\u64cd\u4f5c, \u5982\u6709\u7591\u4e49\u8bf7\u63d0\u4ea4\u7533\u8bc9, \u6216\u8005\u53d1\u90ae\u4ef6\u5230pr@segmentfault.com"]}
+    };
+</script>
+
+    <script src="./Day 19_ EmberJS 入门指南 - 新闻 - SegmentFault_files/assets.js"></script>
+    <script>
+        requirejs.config({
+            baseUrl: "http://static.segmentfault.com/v-564dd704/global/js"
+        });
+    </script>
+            <script src="./Day 19_ EmberJS 入门指南 - 新闻 - SegmentFault_files/post.js"></script>
+    
+<script>
+var port = location.protocol === 'https:' ? 7001 : 7000;
+require(['//segmentfault.com:' + port + '/socket.io/socket.io.js', 'jquery', 'jquery_cookie'], function(io, $) {
+    var socket = io("segmentfault.com:" + port);
+    var sid = $.cookie('PHPSESSID');
+    socket.emit('auth', sid);
+    socket.on('event', function(count){
+        if(count === '0') {
+            $('.has-unread__count').remove()
+        } else {
+            if($('.has-unread__count').length) {
+                $('.has-unread__count').text(count);
+            } else {
+                $('#messageCount').after('<span class="has-unread__count">' + count + '</span>');
+            }
+        }
+    });
+});
+</script>
+<script>
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-918487-8']);
+    _gaq.push(['_trackPageview']);
+    (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r;
+        i[r] = i[r] || function () {
+                    (i[r].q = i[r].q || []).push(arguments)
+                }, i[r].l = 1 * new Date();
+        a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0];
+        a.async = 1;
+        a.src   = g;
+        m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+    ga('create', 'UA-918487-8', 'auto');
+    ga('send', 'pageview');
+
+</script>
+
+<script>
+    var _hmt = _hmt || [];
+    (function () {
+        var hm = document.createElement("script");
+        hm.src = "//hm.baidu.com/hm.js?e23800c454aa573c0ccb16b52665ac26";
+        var s  = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+
+<script src="./Day 19_ EmberJS 入门指南 - 新闻 - SegmentFault_files/m.js"></script>
+<script>
+    if (typeof BAIDU_CLB_fillSlotAsync === 'function') {
+                BAIDU_CLB_fillSlotAsync('981183', 'adid-981183');
+                BAIDU_CLB_fillSlotAsync('981184', 'adid-981184');
+                BAIDU_CLB_fillSlotAsync('981694', 'adid-981694');
+                BAIDU_CLB_fillSlotAsync('981179', 'adid-981179');
+                BAIDU_CLB_fillSlotAsync('1119908', 'adid-1119908');
+            }
+</script>
+
+
+
+
+
+<div id="noteWidget" class="noteWidget hidden hidden-xs">
+    <div class="noteWidget-header clearfix">
+        <h2 class="h4 pull-left">记笔记</h2>
+        <ul class="list-inline pull-right mb0">
+            <li id="noteWidgetMinimize"><span class="icon-minimize"></span></li><li id="noteWidgetZoom"><span class="icon-zoom"></span></li><li id="noteWidgetClose"><span class="icon-close"></span></li>
+        </ul>
+    </div>
+    <form method="POST" action="http://segmentfault.com/api/notes/add" role="form">
+        <div class="form-group">
+            <label for="title" class="sr-only">标题</label>
+            <input type="hidden" value="" id="draftId">
+            <input type="text" name="title" data-error="" autocomplete="off" class="form-control" placeholder="笔记描述" value="">
+        </div>
+        <div class="editor-config clearfix">
+            <select name="lang" class="form-control pull-left input-sm">
+                <optgroup label="文本语法">
+                    <option value="text" data-mode="text">纯文本</option>
+                    <option value="markdown" data-mode="markdown">Markdown</option>
+                    <option value="javascript" data-mode="javascript">Javascript</option>
+                    <option value="css" data-mode="css">CSS</option>
+                    <option value="html5" data-mode="htmlmixed">HTML</option>
+                    <option value="php" data-mode="php">PHP</option>
+                    <option value="python" data-mode="python">Python</option>
+                    <option value="ruby" data-mode="ruby">Ruby</option>
+                    <option value="go" data-mode="go">Go</option>
+                    <option value="c" data-mode="clike">C/C++</option>
+                    <option value="java" data-mode="java">Java</option>
+                    <option value="bash" data-mode="shell">Shell/Bash</option>
+                </optgroup>
+            </select>
+            <div class="pull-right hidden-xs">
+                <select name="indentWithTabs" class="form-control inline-block input-sm">
+                    <optgroup label="缩进模式">
+                        <option value="false">空格缩进</option>
+                        <option value="true">Tabs 缩进</option>
+                    </optgroup>
+                </select>
+                <select name="tabSize" class="form-control inline-block input-sm">
+                    <optgroup label="缩进大小">
+                        <option value="2">2</option>
+                        <option value="4" selected="">4</option>
+                    </optgroup>
+                </select>
+                <select name="lineWrap" class="form-control inline-block input-sm">
+                    <optgroup label="换行方式">
+                        <option value="true">自动换行</option>
+                        <option value="false">不换行</option>
+                    </optgroup>
+                </select>
+            </div>
+        </div>
+        <textarea id="codeMirror" class="form-control" style="display: none;"></textarea><div class="CodeMirror cm-s-default CodeMirror-wrap"><div style="overflow: hidden; position: relative; width: 3px; height: 0px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" style="position: absolute; padding: 0px; width: 1000px; height: 1em; outline: none;" tabindex="0"></textarea></div><div class="CodeMirror-hscrollbar" style="left: 0px;"><div style="height: 100%; min-height: 1px;"></div></div><div class="CodeMirror-vscrollbar"><div style="min-width: 1px;"></div></div><div class="CodeMirror-scrollbar-filler"></div><div class="CodeMirror-gutter-filler"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px;"><div style="position: relative;"><div class="CodeMirror-lines"><div style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-cursors"></div><div class="CodeMirror-code"></div></div></div></div></div><div style="position: absolute; height: 30px; width: 1px;"></div><div class="CodeMirror-gutters"><div class="CodeMirror-gutter CodeMirror-linenumbers" style="width: 1px;"></div></div></div></div>
+        <div class="mt20 clearfix">
+            <div class="pull-right">
+                <span class="text-muted hidden" id="editorStatus">已保存</span>
+                <a id="dropIt" href="javascript:void(0);" class="mr10 hidden">[舍弃]</a>
+                <button data-type="note" id="publishIt2" class="btn btn-default ml10" data-id="" data-do="add" data-url="" data-text="保存私密笔记" data-name="">保存私密笔记</button>
+                <button data-type="note" id="publishIt" class="btn btn-primary ml10" data-id="" data-do="add" data-url="" data-text="保存公开笔记" data-name="">保存公开笔记</button>
+                </div>
+            </div>
+        </form></div>
+    
+<div id="global-zeroclipboard-html-bridge" class="global-zeroclipboard-container" style="position: absolute; left: 0px; top: -9999px; width: 1px; height: 1px; z-index: 999999999;"><object id="global-zeroclipboard-flash-bridge" name="global-zeroclipboard-flash-bridge" width="100%" height="100%" type="application/x-shockwave-flash" data="http://static.segmentfault.com/v-564dd704/3rd/zeroclipboard/dist/ZeroClipboard.swf?noCache=1447995807922"><param name="allowScriptAccess" value="always"><param name="allowNetworking" value="all"><param name="menu" value="false"><param name="wmode" value="transparent"><param name="flashvars" value="trustedOrigins=segmentfault.com%2C%2F%2Fsegmentfault.com%2Chttp%3A%2F%2Fsegmentfault.com&amp;swfObjectId=global-zeroclipboard-flash-bridge"></object></div><div id="atwho-container"><div id="atwho-ground-commentText-1190000000365519"><div class="atwho-view" id="at-view-64"><ul class="atwho-view-ul"></ul></div></div></div><textarea tabindex="-1" style="position: absolute; top: -999px; left: 0px; right: auto; bottom: auto; border: 0px; padding: 0px; box-sizing: content-box; word-wrap: break-word; overflow: hidden; transition: none; height: 0px !important; min-height: 0px !important; font-family: &#39;Open Sans&#39;, &#39;Helvetica Neue&#39;, Helvetica, Arial, STHeiti, &#39;Microsoft Yahei&#39;, SimSun, sans-serif; font-size: 14px; font-weight: 400; font-style: normal; letter-spacing: 0px; text-transform: none; word-spacing: 0px; text-indent: 0px; white-space: pre-wrap; line-height: 21px; width: 533.578px;" class="autosizejs" id="autosizejs"></textarea><div class="sfmodal modal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true" style="display: none;">  <div class="modal-dialog ">    <div class="modal-content">      <div class="modal-header">        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>        <h4 class="modal-title">收藏</h4>      </div><div class="modal-body">        <p class="sfModal-content"><form class="bookmarklist-form"><p class="required">添加到收藏夹</p><ul class="bookmarklist list-unstyled mb0">    <li data-id="1230000004021358" class="active"><input type="checkbox">ember</li></ul>    <div class="mt20"><a href="http://segmentfault.com/a/1190000000365519#" class="new-bookmark">+ 创建新收藏夹</a></div></form></p></div>          <div class="modal-footer "><button type="button" class="btn btn-default" data-dismiss="modal">取消</button><button type="button" class="btn btn-primary done-btn" disabled="disabled">加载中</button></div>        </div>      </div>    </div></body></html>
